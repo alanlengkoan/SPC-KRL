@@ -1,8 +1,8 @@
 import 'dart:convert';
 
-import 'package:egg_detection/networks/api.dart';
-import 'package:egg_detection/pages/konsultasi/add.dart';
-import 'package:egg_detection/pages/konsultasi/result.dart';
+import 'package:seaweed_detection/networks/api.dart';
+import 'package:seaweed_detection/pages/konsultasi/add.dart';
+import 'package:seaweed_detection/pages/konsultasi/result.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

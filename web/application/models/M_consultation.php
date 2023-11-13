@@ -8,6 +8,12 @@ class M_consultation extends CI_Model
         return $result;
     }
 
+    public function get_all_user($id)
+    {
+        $result = $this->db->query("SELECT c.id_consultation, u.nama AS users, c.`name`, c.image FROM tb_consultation AS c LEFT JOIN tb_users AS u ON u.id_users = c.id_users WHERE c.id_users = '$id' ORDER BY c.created_at DESC");
+        return $result;
+    }
+
     public function get_all_data_dt()
     {
         $this->datatables->select('c.id_consultation, u.nama AS users, c.`name`, c.image');

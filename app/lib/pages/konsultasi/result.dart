@@ -1,5 +1,5 @@
-import 'package:egg_detection/networks/api.dart';
-import 'package:egg_detection/pages/home.dart';
+import 'package:seaweed_detection/networks/api.dart';
+import 'package:seaweed_detection/pages/home.dart';
 import 'package:flutter/material.dart';
 import 'dart:convert';
 

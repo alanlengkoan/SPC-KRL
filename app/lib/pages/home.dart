@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:egg_detection/pages/about.dart';
-import 'package:egg_detection/pages/konsultasi/view.dart';
-import 'package:egg_detection/widgets/nav-drawer.dart';
+import 'package:seaweed_detection/pages/about.dart';
+import 'package:seaweed_detection/pages/konsultasi/view.dart';
+import 'package:seaweed_detection/widgets/nav-drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

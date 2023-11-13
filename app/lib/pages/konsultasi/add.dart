@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:egg_detection/networks/api.dart';
-import 'package:egg_detection/pages/konsultasi/result.dart';
+import 'package:seaweed_detection/networks/api.dart';
+import 'package:seaweed_detection/pages/konsultasi/result.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';

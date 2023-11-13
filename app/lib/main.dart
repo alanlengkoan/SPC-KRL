@@ -1,9 +1,9 @@
 import 'dart:convert';
 
-import 'package:egg_detection/auth/sign_in/view.dart';
-import 'package:egg_detection/networks/api.dart';
-import 'package:egg_detection/pages/home.dart';
-import 'package:egg_detection/widgets/splash.dart';
+import 'package:seaweed_detection/auth/sign_in/view.dart';
+import 'package:seaweed_detection/networks/api.dart';
+import 'package:seaweed_detection/pages/home.dart';
+import 'package:seaweed_detection/widgets/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'EDA',
+      title: 'SDA',
       debugShowCheckedModeBanner: false,
       home: CheckAuth(),
     );

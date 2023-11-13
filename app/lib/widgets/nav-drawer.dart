@@ -1,4 +1,4 @@
-import 'package:egg_detection/auth/sign_in/view.dart';
+import 'package:seaweed_detection/auth/sign_in/view.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

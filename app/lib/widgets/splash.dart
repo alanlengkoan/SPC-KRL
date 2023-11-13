@@ -1,5 +1,5 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
-import 'package:egg_detection/auth/sign_in/view.dart';
+import 'package:seaweed_detection/auth/sign_in/view.dart';
 import 'package:flutter/material.dart';
 
 class Splash extends StatefulWidget {
@@ -22,7 +22,7 @@ class _SplashState extends State<Splash> {
           ),
           Container(
             child: const Text(
-              'EDA',
+              'SDA',
               style: TextStyle(
                 fontSize: 18,
                 color: Color(0xFF1C6758),

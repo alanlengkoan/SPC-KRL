@@ -1,6 +1,6 @@
-import 'package:egg_detection/auth/sign_up/view.dart';
-import 'package:egg_detection/networks/api.dart';
-import 'package:egg_detection/pages/home.dart';
+import 'package:seaweed_detection/auth/sign_up/view.dart';
+import 'package:seaweed_detection/networks/api.dart';
+import 'package:seaweed_detection/pages/home.dart';
 import 'package:flutter/material.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'dart:convert';

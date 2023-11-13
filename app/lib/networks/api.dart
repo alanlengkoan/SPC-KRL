@@ -2,9 +2,9 @@ import 'package:http/http.dart' as http;
 
 class Network {
   // dev
-  // final String _url = 'http://192.168.0.113/skripsi/SPC-KTE/web/api';
+  final String _url = 'http://192.168.1.3/skripsi/SPC-KRL/web/api';
   // prod
-  final String _url = 'http://192.168.43.113/skripsi/web/api';
+  // final String _url = 'http://192.168.43.113/skripsi/web/api';
 
   baseUrl() {
     return _url;
@@ -29,7 +29,7 @@ class Network {
   }
 
   getKonsultasiById(id) async {
-    var urlAuth = Uri.parse(_url + '/konsultasi/detail/' + id);
+    var urlAuth = Uri.parse(_url + '/consultation/detail/' + id);
 
     return await http.get(
       urlAuth,
@@ -38,7 +38,7 @@ class Network {
   }
 
   getKonsultasiResult(id) async {
-    var urlAuth = Uri.parse(_url + '/konsultasi/result/' + id);
+    var urlAuth = Uri.parse(_url + '/consultation/result/' + id);
 
     return await http.get(
       urlAuth,
@@ -47,7 +47,7 @@ class Network {
   }
 
   addKonsultasi(data) async {
-    var urlAuth = Uri.parse(_url + '/konsultasi/save');
+    var urlAuth = Uri.parse(_url + '/consultation/save');
 
     return await http.post(
       urlAuth,
