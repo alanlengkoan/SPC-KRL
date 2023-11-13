@@ -206,82 +206,82 @@ class Consultation extends MY_Controller
         return $result;
     }
 
-    public function img_one($id)
-    {
-        $consultation = $this->crud->gda('consultation', ['id_consultation' => $id]);
+    // public function img_one($id)
+    // {
+    //     $consultation = $this->crud->gda('consultation', ['id_consultation' => $id]);
 
-        if (PHP_OS === 'WINNT') {
-            $url = getcwd() . '/' . upload_path('gambar') . $consultation['image'];
-        } else {
-            $url = upload_url('gambar') . $consultation['image'];
-        }
+    //     if (PHP_OS === 'WINNT') {
+    //         $url = getcwd() . '/' . upload_path('gambar') . $consultation['image'];
+    //     } else {
+    //         $url = upload_url('gambar') . $consultation['image'];
+    //     }
 
-        $imagick = new Imagick($url);
-        if (getExtension($consultation['image']) === 'png') {
-            header("Content-Type: image/png");
-        } else {
-            header("Content-Type: image/jpeg");
-        }
-        echo $imagick->getImageBlob();
-    }
+    //     $imagick = new Imagick($url);
+    //     if (getExtension($consultation['image']) === 'png') {
+    //         header("Content-Type: image/png");
+    //     } else {
+    //         header("Content-Type: image/jpeg");
+    //     }
+    //     echo $imagick->getImageBlob();
+    // }
 
-    public function img_two($id)
-    {
-        $consultation = $this->crud->gda('consultation', ['id_consultation' => $id]);
+    // public function img_two($id)
+    // {
+    //     $consultation = $this->crud->gda('consultation', ['id_consultation' => $id]);
 
-        if (PHP_OS === 'WINNT') {
-            $url = getcwd() . '/' . upload_path('gambar') . $consultation['image'];
-        } else {
-            $url = upload_url('gambar') . $consultation['image'];
-        }
+    //     if (PHP_OS === 'WINNT') {
+    //         $url = getcwd() . '/' . upload_path('gambar') . $consultation['image'];
+    //     } else {
+    //         $url = upload_url('gambar') . $consultation['image'];
+    //     }
 
-        $imagick = new Imagick($url);
-        $imagick->setImageType(2);
-        if (getExtension($consultation['image']) === 'png') {
-            header("Content-Type: image/png");
-        } else {
-            header("Content-Type: image/jpeg");
-        }
-        echo $imagick->getImageBlob();
-    }
+    //     $imagick = new Imagick($url);
+    //     $imagick->setImageType(2);
+    //     if (getExtension($consultation['image']) === 'png') {
+    //         header("Content-Type: image/png");
+    //     } else {
+    //         header("Content-Type: image/jpeg");
+    //     }
+    //     echo $imagick->getImageBlob();
+    // }
 
-    public function img_three($id)
-    {
-        $consultation = $this->crud->gda('consultation', ['id_consultation' => $id]);
+    // public function img_three($id)
+    // {
+    //     $consultation = $this->crud->gda('consultation', ['id_consultation' => $id]);
 
-        if (PHP_OS === 'WINNT') {
-            $url = getcwd() . '/' . upload_path('gambar') . $consultation['image'];
-        } else {
-            $url = upload_url('gambar') . $consultation['image'];
-        }
+    //     if (PHP_OS === 'WINNT') {
+    //         $url = getcwd() . '/' . upload_path('gambar') . $consultation['image'];
+    //     } else {
+    //         $url = upload_url('gambar') . $consultation['image'];
+    //     }
 
-        $imagick = new Imagick($url);
-        $imagick->quantizeImage(5, Imagick::COLORSPACE_GRAY, 1, TRUE, FALSE);
-        if (getExtension($consultation['image']) === 'png') {
-            header("Content-Type: image/png");
-        } else {
-            header("Content-Type: image/jpeg");
-        }
-        echo $imagick->getImageBlob();
-    }
+    //     $imagick = new Imagick($url);
+    //     $imagick->quantizeImage(5, Imagick::COLORSPACE_GRAY, 1, TRUE, FALSE);
+    //     if (getExtension($consultation['image']) === 'png') {
+    //         header("Content-Type: image/png");
+    //     } else {
+    //         header("Content-Type: image/jpeg");
+    //     }
+    //     echo $imagick->getImageBlob();
+    // }
 
-    public function img_four($id)
-    {
-        $consultation = $this->crud->gda('consultation', ['id_consultation' => $id]);
+    // public function img_four($id)
+    // {
+    //     $consultation = $this->crud->gda('consultation', ['id_consultation' => $id]);
 
-        if (PHP_OS === 'WINNT') {
-            $url = getcwd() . '/' . upload_path('gambar') . $consultation['image'];
-        } else {
-            $url = upload_url('gambar') . $consultation['image'];
-        }
+    //     if (PHP_OS === 'WINNT') {
+    //         $url = getcwd() . '/' . upload_path('gambar') . $consultation['image'];
+    //     } else {
+    //         $url = upload_url('gambar') . $consultation['image'];
+    //     }
 
-        $imagick = new Imagick($url);
-        $imagick->setImageType(1);
-        if (getExtension($consultation['image']) === 'png') {
-            header("Content-Type: image/png");
-        } else {
-            header("Content-Type: image/jpeg");
-        }
-        echo $imagick->getImageBlob();
-    }
+    //     $imagick = new Imagick($url);
+    //     $imagick->setImageType(1);
+    //     if (getExtension($consultation['image']) === 'png') {
+    //         header("Content-Type: image/png");
+    //     } else {
+    //         header("Content-Type: image/jpeg");
+    //     }
+    //     echo $imagick->getImageBlob();
+    // }
 }
