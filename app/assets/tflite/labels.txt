@@ -1,0 +1,4 @@
+0 Telur Coklat
+1 Telur Coklat Putih
+2 Telur Putih
+3 Bukan Telur
