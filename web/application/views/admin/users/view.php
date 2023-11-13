@@ -31,13 +31,12 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="col-lg-6">
-                                <h5 class="w-75 p-2"><?= $title ?></h5>
+                                <h5 class="w-75 p-2">Daftar <?= $title ?></h5>
                             </div>
                         </div>
                     </div>
                     <div class="card-block table-border-style">
-                        <table class="table table-striped table-bordered nowrap" id="tabel-konsultasi-dt" style="width: 100%;">
-                        </table>
+                        <table class="table table-striped table-bordered nowrap" id="tabel-users-dt" style="width: 100%;"></table>
                     </div>
                 </div>
             </div>

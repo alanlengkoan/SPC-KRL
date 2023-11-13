@@ -550,7 +550,7 @@ code {
 .color-accordion-block a:focus,
 .color-accordion-block a:hover {
   color: #fff;
-  background: #1C6758
+  background: #468c82
 }
 
 a.bg-default:focus,
@@ -2784,7 +2784,7 @@ table thead .border-bottom-info th {
 }
 
 .pcoded[nav-type="st1"] .pcoded-item>li:nth-child(1)>a>.pcoded-micon {
-  color: #1C6758
+  color: #468c82
 }
 
 .pcoded[nav-type="st1"] .pcoded-item>li:nth-child(2)>a>.pcoded-micon {
@@ -2804,7 +2804,7 @@ table thead .border-bottom-info th {
 }
 
 .pcoded[nav-type="st1"] .pcoded-item>li:nth-child(6)>a>.pcoded-micon {
-  color: #1C6758
+  color: #468c82
 }
 
 .pcoded[nav-type="st1"] .pcoded-item>li:nth-child(7)>a>.pcoded-micon {
@@ -4343,7 +4343,7 @@ table thead .border-bottom-info th {
 }
 
 .pcoded .pcoded-navbar .pcoded-navigation-label[menu-title-theme="theme1"] {
-  color: #1C6758
+  color: #468c82
 }
 
 .pcoded .pcoded-navbar .pcoded-navigation-label[menu-title-theme="theme2"] {
@@ -4538,7 +4538,7 @@ table thead .border-bottom-info th {
 }
 
 body[themebg-pattern="theme1"] {
-  background-color: #1C6758
+  background-color: #468c82
 }
 
 body[themebg-pattern="theme2"] {
@@ -4825,7 +4825,7 @@ body[themebg-pattern="theme6"] {
 
 .pcoded[theme-layout="vertical"] .pcoded-navbar[active-item-theme="theme1"] .pcoded-item li .pcoded-submenu li.active>a,
 .pcoded[theme-layout="vertical"] .pcoded-navbar[active-item-theme="theme1"] .pcoded-item li .pcoded-submenu li:hover>a {
-  color: #1C6758
+  color: #468c82
 }
 
 .pcoded[theme-layout="vertical"] .pcoded-navbar[active-item-theme="theme1"] .pcoded-item li .pcoded-submenu li.active>a {
@@ -4833,11 +4833,11 @@ body[themebg-pattern="theme6"] {
 }
 
 .pcoded[theme-layout="vertical"] .pcoded-navbar[active-item-theme="theme1"] .pcoded-item li:hover>a {
-  color: #1C6758
+  color: #468c82
 }
 
 .pcoded[theme-layout="vertical"] .pcoded-navbar[active-item-theme="theme1"] .pcoded-item li:hover>a .pcoded-micon {
-  color: #1C6758
+  color: #468c82
 }
 
 .pcoded[theme-layout="vertical"] .pcoded-navbar[active-item-theme="theme1"] .pcoded-item li:hover>a:before {
@@ -4850,7 +4850,7 @@ body[themebg-pattern="theme6"] {
 .pcoded[theme-layout="vertical"] .pcoded-navbar[active-item-theme="theme1"] .pcoded-item>li.pcoded-trigger:hover>a,
 .pcoded[theme-layout="vertical"] .pcoded-navbar[active-item-theme="theme1"] .pcoded-item>li:hover>a,
 .pcoded[theme-layout="vertical"] .pcoded-navbar[active-item-theme="theme1"] .pcoded-item>li:hover:hover>a {
-  background: #1C6758;
+  background: #468c82;
   color: #fff
 }
 
@@ -5521,7 +5521,7 @@ body[themebg-pattern="theme6"] {
 
 .pcoded[theme-layout="horizontal"] .pcoded-navbar[active-item-theme="theme1"] .pcoded-item li.active>a,
 .pcoded[theme-layout="horizontal"] .pcoded-navbar[active-item-theme="theme1"] .pcoded-item li:hover>a {
-  background: #1C6758;
+  background: #468c82;
   color: #fff
 }
 
@@ -5546,7 +5546,7 @@ body[themebg-pattern="theme6"] {
 .pcoded[theme-layout="horizontal"] .pcoded-navbar[active-item-theme="theme1"] .pcoded-item>li.pcoded-trigger:hover>a,
 .pcoded[theme-layout="horizontal"] .pcoded-navbar[active-item-theme="theme1"] .pcoded-item>li:hover>a,
 .pcoded[theme-layout="horizontal"] .pcoded-navbar[active-item-theme="theme1"] .pcoded-item>li:hover:hover>a {
-  background: #1C6758;
+  background: #468c82;
   color: #fff
 }
 
@@ -6407,7 +6407,7 @@ body[themebg-pattern="theme6"] {
 }
 
 .theme-color a[menu-caption="theme1"] {
-  background: #1C6758
+  background: #468c82
 }
 
 .theme-color a[menu-caption="theme2"] {
@@ -6443,7 +6443,7 @@ body[themebg-pattern="theme6"] {
 }
 
 .theme-color a[header-theme="theme1"] .head {
-  background: #1C6758
+  background: #468c82
 }
 
 .theme-color a[header-theme="theme1"] .head:after,
@@ -6505,7 +6505,7 @@ body[themebg-pattern="theme6"] {
 }
 
 .theme-color a[active-item-theme="theme1"] {
-  background: #1C6758
+  background: #468c82
 }
 
 .theme-color a[active-item-theme="theme2"] {
@@ -6593,7 +6593,7 @@ body[themebg-pattern="theme6"] {
 }
 
 .theme-color a[themebg-pattern="theme1"] {
-  background: #1C6758
+  background: #468c82
 }
 
 .theme-color a[themebg-pattern="theme2"] {
@@ -6643,7 +6643,7 @@ body[themebg-pattern="theme6"] {
 }
 
 .pcoded .pcoded-header[header-theme="theme1"] {
-  background: #1C6758
+  background: #468c82
 }
 
 .pcoded .pcoded-header[header-theme="theme1"] .dropdown-toggle,
@@ -6703,7 +6703,7 @@ body[themebg-pattern="theme6"] {
 }
 
 .pcoded[fream-type="theme1"][theme-layout="vertical"] .page-header {
-  background: #1C6758
+  background: #468c82
 }
 
 .pcoded[fream-type="theme1"][theme-layout="horizontal"] .page-header {

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Klasifikasi extends MY_Controller
+class Classification extends MY_Controller
 {
     public function __construct()
     {
@@ -15,13 +15,13 @@ class Klasifikasi extends MY_Controller
     public function index()
     {
         // untuk load view
-        $this->template->load('admin', 'Klasifikasi', 'klasifikasi', 'view');
+        $this->template->load('admin', 'Classification', 'classification', 'view');
     }
 
     // untuk get data
     public function get_data_dt()
     {
-        $this->m_klasifikasi->get_all_data_dt();
+        $this->m_classification->get_all_data_dt();
     }
 
     // untuk get data by id

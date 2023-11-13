@@ -36,19 +36,19 @@
                         </div>
                     </div>
                     <div class="card-block table-border-style">
-                        <form id="form-konsultasi" action="<?= admin_url() ?>konsultasi/process" method="POST">
+                        <form id="form-consultation" action="<?= admin_url() ?>consultation/process" method="POST">
                             <input type="hidden" id="<?= $this->security->get_csrf_token_name() ?>" name="<?= $this->security->get_csrf_token_name() ?>" value="<?= $this->security->get_csrf_hash() ?>" />
 
                             <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Kriteria 1 *</label>
+                                <label class="col-sm-3 col-form-label">Nama *</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="kriteria_1" id="kriteria_1" placeholder="Masukkan Kriteria 1" />
+                                    <input type="text" class="form-control" name="nama" id="nama" placeholder="Masukkan nama Anda" />
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Kriteria 2 *</label>
+                                <label class="col-sm-3 col-form-label">Gambar *</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="kriteria_2" id="kriteria_2" placeholder="Masukkan Kriteria 2" />
+                                    <input type="file" class="form-control" name="image" id="image" />
                                 </div>
                             </div>
                             <div class="row">

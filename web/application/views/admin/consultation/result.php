@@ -40,8 +40,10 @@
                         <table class="table table-striped table-bordered nowrap" style="width: 100%;">
                             <thead>
                                 <tr align="center">
-                                    <th>kriteria_1</th>
-                                    <th>kriteria_2</th>
+                                    <th>Contrast</th>
+                                    <th>Correlation</th>
+                                    <th>Energy</th>
+                                    <th>Homogeneity</th>
                                     <th>Label</th>
                                     <th>Euclidian Distance</th>
                                 </tr>
@@ -52,8 +54,10 @@
 
                                 foreach ($a as $k_a => $v_a) { ?>
                                     <tr align="center">
-                                        <td><?= $data_training[$k_a]->kriteria_1 ?></td>
-                                        <td><?= $data_training[$k_a]->kriteria_2 ?></td>
+                                        <td><?= $data_training[$k_a]->contrast ?></td>
+                                        <td><?= $data_training[$k_a]->correlation ?></td>
+                                        <td><?= $data_training[$k_a]->energy ?></td>
+                                        <td><?= $data_training[$k_a]->homogeneity ?></td>
                                         <td><?= $data_training[$k_a]->nama ?></td>
                                         <td><?= $v_a ?></td>
                                     </tr>
@@ -74,8 +78,10 @@
                         <table class="table table-striped table-bordered nowrap" style="width: 100%;">
                             <thead>
                                 <tr align="center">
-                                    <th>kriteria_1</th>
-                                    <th>kriteria_2</th>
+                                    <th>Contrast</th>
+                                    <th>Correlation</th>
+                                    <th>Energy</th>
+                                    <th>Homogeneity</th>
                                     <th>Label</th>
                                     <th>Euclidian Distance</th>
                                 </tr>
@@ -86,8 +92,10 @@
 
                                 foreach ($b as $k_b => $v_b) { ?>
                                     <tr align="center">
-                                        <td><?= $data_training[$k_b]->kriteria_1 ?></td>
-                                        <td><?= $data_training[$k_b]->kriteria_2 ?></td>
+                                        <td><?= $data_training[$k_b]->contrast ?></td>
+                                        <td><?= $data_training[$k_b]->correlation ?></td>
+                                        <td><?= $data_training[$k_b]->energy ?></td>
+                                        <td><?= $data_training[$k_b]->homogeneity ?></td>
                                         <td><?= $data_training[$k_b]->nama ?></td>
                                         <td><?= $v_b ?></td>
                                     </tr>
@@ -148,14 +156,18 @@
                         <table class="table table-striped table-bordered" style="width: 100%;">
                             <thead>
                                 <tr align="center">
-                                    <th>kriteria_1</th>
-                                    <th>kriteria_2</th>
+                                    <th>Contrast</th>
+                                    <th>Correlation</th>
+                                    <th>Energy</th>
+                                    <th>Homogeneity</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr align="center">
-                                    <td><?= $data_test['kriteria_1'] ?></td>
-                                    <td><?= $data_test['kriteria_2'] ?></td>
+                                    <td><?= $data_test['contrast'] ?></td>
+                                    <td><?= $data_test['correlation'] ?></td>
+                                    <td><?= $data_test['energy'] ?></td>
+                                    <td><?= $data_test['homogeneity'] ?></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -200,8 +212,6 @@
                     </div>
                 </div>
 
-
-
                 <div class="card">
                     <div class="card-header">
                         <div class="row">
@@ -214,8 +224,10 @@
                         <table class="table table-striped table-bordered nowrap" id="tabel-rangking" style="width: 100%;">
                             <thead>
                                 <tr align="center">
-                                    <th>kriteria_1</th>
-                                    <th>kriteria_2</th>
+                                    <th>Contrast</th>
+                                    <th>Correlation</th>
+                                    <th>Energy</th>
+                                    <th>Homogeneity</th>
                                     <th>Klasifikasi</th>
                                     <th>Validitas</th>
                                 </tr>
@@ -226,8 +238,10 @@
 
                                 foreach ($e as $k_e => $v_e) { ?>
                                     <tr align="center">
-                                        <td><?= $data_training[$k_e]->kriteria_1 ?></td>
-                                        <td><?= $data_training[$k_e]->kriteria_2 ?></td>
+                                        <td><?= $data_training[$k_e]->contrast ?></td>
+                                        <td><?= $data_training[$k_e]->correlation ?></td>
+                                        <td><?= $data_training[$k_e]->energy ?></td>
+                                        <td><?= $data_training[$k_e]->homogeneity ?></td>
                                         <td><?= $data_training[$k_e]->nama ?></td>
                                         <td><?= $v_e ?></td>
                                     </tr>
@@ -248,8 +262,10 @@
                         <table class="table table-striped table-bordered nowrap" id="tabel-rangking" style="width: 100%;">
                             <thead>
                                 <tr align="center">
-                                    <th>kriteria_1</th>
-                                    <th>kriteria_2</th>
+                                    <th>Contrast</th>
+                                    <th>Correlation</th>
+                                    <th>Energy</th>
+                                    <th>Homogeneity</th>
                                     <th>Klasifikasi</th>
                                     <th>Weight Voting</th>
                                 </tr>
@@ -260,8 +276,10 @@
 
                                 foreach ($f as $k_f => $v_f) { ?>
                                     <tr align="center">
-                                        <td><?= $data_training[$k_f]->kriteria_1 ?></td>
-                                        <td><?= $data_training[$k_f]->kriteria_2 ?></td>
+                                        <td><?= $data_training[$k_f]->contrast ?></td>
+                                        <td><?= $data_training[$k_f]->correlation ?></td>
+                                        <td><?= $data_training[$k_f]->energy ?></td>
+                                        <td><?= $data_training[$k_f]->homogeneity ?></td>
                                         <td><?= $data_training[$k_f]->nama ?></td>
                                         <td><?= $v_f['weight'] ?></td>
                                     </tr>
@@ -282,8 +300,10 @@
                         <table class="table table-striped table-bordered nowrap" id="tabel-rangking" style="width: 100%;">
                             <thead>
                                 <tr align="center">
-                                    <th>kriteria_1</th>
-                                    <th>kriteria_2</th>
+                                    <th>Contrast</th>
+                                    <th>Correlation</th>
+                                    <th>Energy</th>
+                                    <th>Homogeneity</th>
                                     <th>Klasifikasi</th>
                                     <th>Euclidian Distance</th>
                                     <th>Validitas</th>
@@ -296,8 +316,10 @@
 
                                 foreach ($f as $k_f => $v_f) { ?>
                                     <tr align="center">
-                                        <td><?= $data_training[$k_f]->kriteria_1 ?></td>
-                                        <td><?= $data_training[$k_f]->kriteria_2 ?></td>
+                                        <td><?= $data_training[$k_f]->contrast ?></td>
+                                        <td><?= $data_training[$k_f]->correlation ?></td>
+                                        <td><?= $data_training[$k_f]->energy ?></td>
+                                        <td><?= $data_training[$k_f]->homogeneity ?></td>
                                         <td><?= $data_training[$k_f]->nama ?></td>
                                         <td><?= $v_f['euclidian'] ?></td>
                                         <td><?= $v_f['validitas'] ?></td>

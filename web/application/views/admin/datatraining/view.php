@@ -39,7 +39,7 @@
                         </div>
                     </div>
                     <div class="card-block table-border-style">
-                        <table class="table table-striped table-bordered nowrap" id="tabel-basis-dt" style="width: 100%;">
+                        <table class="table table-striped table-bordered nowrap" id="tabel-datatraining-dt" style="width: 100%;">
                         </table>
                     </div>
                 </div>
@@ -56,10 +56,10 @@
             <div class="modal-header">
                 <h4 class="modal-title"><span id="judul-add-upd"></span> <?= $title ?></h4>
             </div>
-            <form id="form-add-upd" action="<?= admin_url() ?>basis/process_save" method="POST">
+            <form id="form-add-upd" action="<?= admin_url() ?>datatraining/process_save" method="POST">
                 <!-- begin:: id -->
                 <input type="hidden" id="<?= $this->security->get_csrf_token_name() ?>" name="<?= $this->security->get_csrf_token_name() ?>" value="<?= $this->security->get_csrf_hash() ?>" />
-                <input type="hidden" name="id_basis" id="id_basis" />
+                <input type="hidden" name="id_datatraining" id="id_datatraining" />
                 <!-- end:: id -->
 
                 <div class="modal-body">
@@ -75,15 +75,12 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Kriteria 1 *</label>
+                        <label class="col-sm-3 col-form-label">Gambar *</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="kriteria_1" id="kriteria_1" placeholder="Masukkan Kriteria 1" />
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Kriteria 2 *</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" name="kriteria_2" id="kriteria_2" placeholder="Masukkan Kriteria 2" />
+                            <div id="lihat_gambar"></div>
+                            <input type="file" class="form-control" name="image" id="image" />
+                            <div id="centang_gambar"></div>
+                            <p>File dengan tipe (*.jpg,*.jpeg,*.png) Max. 20MB</p>
                         </div>
                     </div>
                 </div>

@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
-class M_klasifikasi extends CI_Model
+class M_classification extends CI_Model
 {
     public function get_all()
     {

@@ -23,19 +23,27 @@
         </ul>
         <div class="pcoded-navigation-label">Master</div>
         <ul class="pcoded-item pcoded-left-item">
-            <li class="<?= ($this->uri->segment(2) === 'klasifikasi' ? 'active' : '') ?>">
-                <a href="<?= admin_url() ?>klasifikasi">
+            <li class="<?= ($this->uri->segment(2) === 'classification' ? 'active' : '') ?>">
+                <a href="<?= admin_url() ?>classification">
                     <span class="pcoded-micon">
                         <i class="fa fa-circle"></i>
                     </span>
                     <span class="pcoded-mtext">Classification</span>
                 </a>
             </li>
+            <li class="<?= ($this->uri->segment(2) === 'users' ? 'active' : '') ?>">
+                <a href="<?= admin_url() ?>users">
+                    <span class="pcoded-micon">
+                        <i class="fa fa-circle"></i>
+                    </span>
+                    <span class="pcoded-mtext">Users</span>
+                </a>
+            </li>
         </ul>
         <div class="pcoded-navigation-label">Pustaka</div>
         <ul class="pcoded-item pcoded-left-item">
-            <li class="<?= ($this->uri->segment(2) === 'basis' ? 'active' : '') ?>">
-                <a href="<?= admin_url() ?>basis">
+            <li class="<?= ($this->uri->segment(2) === 'datatraining' ? 'active' : '') ?>">
+                <a href="<?= admin_url() ?>datatraining">
                     <span class="pcoded-micon">
                         <i class="fa fa-circle"></i>
                     </span>
@@ -45,23 +53,23 @@
         </ul>
         <div class="pcoded-navigation-label">Metode</div>
         <ul class="pcoded-item pcoded-left-item">
-            <li class="<?= ($this->uri->segment(2) === 'konsultasi' ? 'active' : '') ?>">
-                <a href="<?= admin_url() ?>konsultasi">
+            <li class="<?= ($this->uri->segment(2) === 'consultation' ? 'active' : '') ?>">
+                <a href="<?= admin_url() ?>consultation">
                     <span class="pcoded-micon">
                         <i class="fa fa-circle"></i>
                     </span>
-                    <span class="pcoded-mtext">Konsultasi</span>
+                    <span class="pcoded-mtext">Consultation</span>
                 </a>
             </li>
         </ul>
         <div class="pcoded-navigation-label">Laporan</div>
         <ul class="pcoded-item pcoded-left-item">
-            <li class="<?= ($this->uri->segment(3) === 'konsultasi' ? 'active' : '') ?>">
-                <a href="<?= admin_url() ?>laporan/konsultasi">
+            <li class="<?= ($this->uri->segment(3) === 'consultation' ? 'active' : '') ?>">
+                <a href="<?= admin_url() ?>laporan/consultation">
                     <span class="pcoded-micon">
                         <i class="fa fa-circle"></i>
                     </span>
-                    <span class="pcoded-mtext">Laporan Konsultasi</span>
+                    <span class="pcoded-mtext">Laporan Consultation</span>
                 </a>
             </li>
         </ul>

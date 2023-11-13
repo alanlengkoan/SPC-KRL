@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Laporan extends MY_Controller
+class Users extends MY_Controller
 {
     public function __construct()
     {
@@ -11,10 +11,16 @@ class Laporan extends MY_Controller
         checking_session($this->username, $this->role, ['admin']);
     }
 
-    // untuk konsultasi
-    public function consultation()
+    // untuk default
+    public function index()
     {
         // untuk load view
-        $this->template->load('admin', 'Laporan Consultation', 'laporan', 'consultation');
+        $this->template->load('admin', 'Users', 'users', 'view');
+    }
+
+    // untuk get data
+    public function get_data_dt()
+    {
+        $this->m_users->get_all_data_dt();
     }
 }

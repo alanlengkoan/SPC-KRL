@@ -15,12 +15,12 @@
 
     // untuk datatable
     var untukTabelDt = function() {
-        dataTable = $('#tabel-konsultasi-dt').DataTable({
+        dataTable = $('#tabel-consultation-dt').DataTable({
             responsive: true,
             processing: true,
             lengthMenu: [5, 10, 25, 50],
             pageLength: 10,
-            ajax: '<?= admin_url() ?>konsultasi/get_data_dt',
+            ajax: '<?= admin_url() ?>consultation/get_data_dt',
             columns: [{
                     title: 'No.',
                     data: null,
@@ -30,8 +30,13 @@
                     }
                 },
                 {
+                    title: 'Users',
+                    data: 'users',
+                    className: 'text-center',
+                },
+                {
                     title: 'Nama',
-                    data: 'nama',
+                    data: 'name',
                     className: 'text-center',
                 },
                 {
@@ -50,8 +55,8 @@
                     render: function(data, type, full, meta) {
                         return `
                             <div class="button-icon-btn button-icon-btn-cl">
-                                <a href="<?= admin_url() ?>konsultasi/results/` + full.id_konsultasi + `" target="_blank" class="btn btn-info btn-sm waves-effect"><i class="fa fa-info-circle"></i>&nbsp;Detail</a>&nbsp;
-                                <button type="button" id="btn-del" data-id="` + full.id_konsultasi + `" class="btn btn-warning btn-sm waves-effect"><i class="fa fa-trash"></i>&nbsp;Hapus</button>
+                                <a href="<?= admin_url() ?>consultation/results/` + full.id_consultation + `" target="_blank" class="btn btn-info btn-sm waves-effect"><i class="fa fa-info-circle"></i>&nbsp;Detail</a>&nbsp;
+                                <button type="button" id="btn-del" data-id="` + full.id_consultation + `" class="btn btn-warning btn-sm waves-effect"><i class="fa fa-trash"></i>&nbsp;Hapus</button>
                             </div>
                         `;
                     },
@@ -75,7 +80,7 @@
                 if (del) {
                     $.ajax({
                         type: "post",
-                        url: "<?= admin_url() ?>konsultasi/process_del",
+                        url: "<?= admin_url() ?>consultation/process_del",
                         dataType: 'json',
                         data: {
                             id: ini.data('id'),
@@ -92,7 +97,7 @@
                                 icon: response.type,
                                 button: response.button,
                             }).then((value) => {
-                                location.reload();
+                                dataTable.ajax.reload();
                             });
                         }
                     });

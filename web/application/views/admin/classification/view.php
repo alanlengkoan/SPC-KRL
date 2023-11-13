@@ -39,7 +39,7 @@
                         </div>
                     </div>
                     <div class="card-block table-border-style">
-                        <table class="table table-striped table-bordered nowrap" id="tabel-klasifikasi-dt" style="width: 100%;">
+                        <table class="table table-striped table-bordered nowrap" id="tabel-classification-dt" style="width: 100%;">
                         </table>
                     </div>
                 </div>
@@ -56,7 +56,7 @@
             <div class="modal-header">
                 <h4 class="modal-title"><span id="judul-add-upd"></span> <?= $title ?></h4>
             </div>
-            <form id="form-add-upd" action="<?= admin_url() ?>klasifikasi/process_save" method="POST">
+            <form id="form-add-upd" action="<?= admin_url() ?>classification/process_save" method="POST">
                 <!-- begin:: id -->
                 <input type="hidden" id="<?= $this->security->get_csrf_token_name() ?>" name="<?= $this->security->get_csrf_token_name() ?>" value="<?= $this->security->get_csrf_hash() ?>" />
                 <input type="hidden" name="id_classification" id="id_classification" />

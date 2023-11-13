@@ -3,13 +3,13 @@
 <script>
     // untuk tambah & ubah data
     var untukTambahDanUbahData = function() {
-        $(document).on('submit', '#form-konsultasi', function(e) {
+        $(document).on('submit', '#form-consultation', function(e) {
             e.preventDefault();
 
-            $('#kriteria_1').attr('required', 'required');
-            $('#kriteria_1').attr('required', 'required');
+            $('#nama').attr('required', 'required');
+            $('#image').attr('required', 'required');
 
-            if ($('#form-konsultasi').parsley().isValid() == true) {
+            if ($('#form-consultation').parsley().isValid() == true) {
                 $.ajax({
                     method: $(this).attr('method'),
                     url: $(this).attr('action'),
@@ -29,7 +29,7 @@
                             icon: response.type,
                             button: response.button,
                         }).then((value) => {
-                            window.location.href = '<?= admin_url() ?>konsultasi/results/' + response.id;
+                            window.location.href = '<?= admin_url() ?>consultation/results/' + response.id;
                         });
 
                         $('#btn-process').removeAttr('disabled');

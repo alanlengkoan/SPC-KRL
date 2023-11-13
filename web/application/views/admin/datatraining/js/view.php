@@ -17,12 +17,12 @@
 
     // untuk datatable
     var untukTabelDt = function() {
-        dataTable = $('#tabel-klasifikasi-dt').DataTable({
+        dataTable = $('#tabel-datatraining-dt').DataTable({
             responsive: true,
             processing: true,
             lengthMenu: [5, 10, 25, 50],
             pageLength: 10,
-            ajax: '<?= admin_url() ?>klasifikasi/get_data_dt',
+            ajax: '<?= admin_url() ?>datatraining/get_data_dt',
             columns: [{
                     title: 'No.',
                     data: null,
@@ -32,16 +32,35 @@
                     }
                 },
                 {
-                    title: 'Nama',
+                    title: 'Klasifikasi',
                     data: 'nama',
                     className: 'text-center',
                 },
                 {
-                    title: 'Deskripsi',
-                    data: null,
-                    class: 'text-center',
+                    title: 'Contrast',
+                    data: 'contrast',
+                    className: 'text-center',
+                },
+                {
+                    title: 'Correlation',
+                    data: 'correlation',
+                    className: 'text-center',
+                },
+                {
+                    title: 'Energy',
+                    data: 'energy',
+                    className: 'text-center',
+                },
+                {
+                    title: 'Homogeneity',
+                    data: 'homogeneity',
+                    className: 'text-center',
+                },
+                {
+                    title: 'Image',
+                    className: 'text-center',
                     render: function(data, type, full, meta) {
-                        return readMore(full.deskripsi);
+                        return `<img src="<?= upload_url('gambar') ?>` + full.image + `" width="100" heigth="100" />`
                     },
                 },
                 {
@@ -53,8 +72,8 @@
                     render: function(data, type, full, meta) {
                         return `
                         <div class="button-icon-btn button-icon-btn-cl">
-                            <button type="button" id="btn-upd" data-id="` + full.id_classification + `" class="btn btn-info btn-sm waves-effect" data-toggle="modal" data-target="#modal-add-upd"><i class="fa fa-pencil"></i>&nbsp;Ubah</button>&nbsp;
-                            <button type="button" id="btn-del" data-id="` + full.id_classification + `" class="btn btn-warning btn-sm waves-effect"><i class="fa fa-trash"></i>&nbsp;Hapus</button>
+                            <button type="button" id="btn-upd" data-id="` + full.id_datatraining + `" class="btn btn-info btn-sm waves-effect" data-toggle="modal" data-target="#modal-add-upd"><i class="fa fa-pencil"></i>&nbsp;Ubah</button>&nbsp;
+                            <button type="button" id="btn-del" data-id="` + full.id_datatraining + `" class="btn btn-warning btn-sm waves-effect"><i class="fa fa-trash"></i>&nbsp;Hapus</button>
                         </div>
                     `;
                     },
@@ -63,13 +82,29 @@
         });
     }();
 
+    // untuk ubah gambar
+    var untukUbahGambar = function() {
+        $(document).on('click', '#ubah_gambar', function() {
+            var ini = $(this);
+            if (ini.is(':checked')) {
+                $("input[name*='image']").removeAttr('disabled');
+                $("input[name*='image']").attr('id', 'image');
+            } else {
+                $("input[name*='image']").attr('disabled', 'disabled');
+                $("input[name*='image']").removeAttr('id');
+                $("input[name*='image']").removeAttr('required');
+                ini.parent().parent().find('#error').empty();
+            }
+        });
+    }();
+
     // untuk tambah & ubah data
     var untukTambahDanUbahData = function() {
         $(document).on('submit', '#form-add-upd', function(e) {
             e.preventDefault();
 
-            $('#nama').attr('required', 'required');
-            $('#deskripsi').attr('required', 'required');
+            $('#id_classification').attr('required', 'required');
+            $('#image').attr('required', 'required');
 
             if ($('#form-add-upd').parsley().isValid() == true) {
                 $.ajax({
@@ -108,6 +143,17 @@
         $(document).on('click', '#btn-add', function() {
             $('#judul-add-upd').html('Tambah');
 
+            $('#id_datatraining').removeAttr('value');
+
+            $("input[name*='image']").removeAttr('disabled');
+            $("input[name*='image']").attr('id', 'image');
+            $('#image').val('');
+
+            $('#lihat_gambar').empty();
+            $('#lihat_gambar').removeAttr('style');
+            $('#centang_gambar').empty();
+            $('#centang_gambar').removeAttr('style');
+
             $('#form-add-upd').parsley().reset();
             $('#form-add-upd')[0].reset();
         });
@@ -120,7 +166,7 @@
 
             $.ajax({
                 type: "POST",
-                url: "<?= admin_url() ?>klasifikasi/get",
+                url: "<?= admin_url() ?>datatraining/get",
                 dataType: 'json',
                 data: {
                     id: ini.data('id'),
@@ -129,17 +175,21 @@
                 beforeSend: function() {
                     $('#judul-add-upd').html('Ubah');
 
-                    $('#form-add-upd').parsley().destroy();
-                    $('#form-add-upd')[0].reset();
-
                     ini.attr('disabled', 'disabled');
                     ini.html('<i class="fa fa-spinner"></i>&nbsp;Menunggu...');
                 },
                 success: function(response) {
                     csrf.val(response.csrf);
-                    $('#id_classification').val(response.id_classification);
-                    $('#nama').val(response.nama);
-                    $('#deskripsi').val(response.deskripsi);
+                    $('#lihat_gambar').html(`<img src="<?= upload_url('gambar') ?>` + response.image + `" width="100" heigth="100" />`);
+                    $('#lihat_gambar').attr('style', 'padding-bottom: 10px');
+
+                    $('#centang_gambar').html(`<div class="checkbox-fade fade-in-default"><label><input type="checkbox" name="ubah_gambar" id="ubah_gambar" /><span class="cr"><i class="cr-icon icofont icofont-ui-check txt-default"></i></span><span>Ubah Gambar!</span></label></div>`);
+                    $('#centang_gambar').attr('style', 'padding-top: 10px');
+
+                    $('#id_datatraining').val(response.id_datatraining);
+                    $('#id_classification').val(response.id_classification).trigger('change');
+                    $('#image').attr('disabled', 'disabled');
+                    $('#image').removeAttr('id');
 
                     ini.removeAttr('disabled');
                     ini.html('<i class="fa fa-pencil"></i>&nbsp;Ubah');
@@ -163,7 +213,7 @@
                 if (del) {
                     $.ajax({
                         type: "post",
-                        url: "<?= admin_url() ?>klasifikasi/process_del",
+                        url: "<?= admin_url() ?>datatraining/process_del",
                         dataType: 'json',
                         data: {
                             id: ini.data('id'),

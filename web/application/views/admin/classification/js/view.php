@@ -17,12 +17,12 @@
 
     // untuk datatable
     var untukTabelDt = function() {
-        dataTable = $('#tabel-basis-dt').DataTable({
+        dataTable = $('#tabel-classification-dt').DataTable({
             responsive: true,
             processing: true,
             lengthMenu: [5, 10, 25, 50],
             pageLength: 10,
-            ajax: '<?= admin_url() ?>basis/get_data_dt',
+            ajax: '<?= admin_url() ?>classification/get_data_dt',
             columns: [{
                     title: 'No.',
                     data: null,
@@ -32,19 +32,17 @@
                     }
                 },
                 {
-                    title: 'Klasifikasi',
+                    title: 'Nama',
                     data: 'nama',
                     className: 'text-center',
                 },
                 {
-                    title: 'Kriteria 1',
-                    data: 'kriteria_1',
-                    className: 'text-center',
-                },
-                {
-                    title: 'Kriteria 2',
-                    data: 'kriteria_2',
-                    className: 'text-center',
+                    title: 'Deskripsi',
+                    data: null,
+                    class: 'text-center',
+                    render: function(data, type, full, meta) {
+                        return readMore(full.deskripsi);
+                    },
                 },
                 {
                     title: 'Aksi',
@@ -55,8 +53,8 @@
                     render: function(data, type, full, meta) {
                         return `
                         <div class="button-icon-btn button-icon-btn-cl">
-                            <button type="button" id="btn-upd" data-id="` + full.id_basis + `" class="btn btn-info btn-sm waves-effect" data-toggle="modal" data-target="#modal-add-upd"><i class="fa fa-pencil"></i>&nbsp;Ubah</button>&nbsp;
-                            <button type="button" id="btn-del" data-id="` + full.id_basis + `" class="btn btn-warning btn-sm waves-effect"><i class="fa fa-trash"></i>&nbsp;Hapus</button>
+                            <button type="button" id="btn-upd" data-id="` + full.id_classification + `" class="btn btn-info btn-sm waves-effect" data-toggle="modal" data-target="#modal-add-upd"><i class="fa fa-pencil"></i>&nbsp;Ubah</button>&nbsp;
+                            <button type="button" id="btn-del" data-id="` + full.id_classification + `" class="btn btn-warning btn-sm waves-effect"><i class="fa fa-trash"></i>&nbsp;Hapus</button>
                         </div>
                     `;
                     },
@@ -65,29 +63,13 @@
         });
     }();
 
-    // untuk ubah gambar
-    var untukUbahGambar = function() {
-        $(document).on('click', '#ubah_gambar', function() {
-            var ini = $(this);
-            if (ini.is(':checked')) {
-                $("input[name*='image']").removeAttr('disabled');
-                $("input[name*='image']").attr('id', 'image');
-            } else {
-                $("input[name*='image']").attr('disabled', 'disabled');
-                $("input[name*='image']").removeAttr('id');
-                $("input[name*='image']").removeAttr('required');
-                ini.parent().parent().find('#error').empty();
-            }
-        });
-    }();
-
     // untuk tambah & ubah data
     var untukTambahDanUbahData = function() {
         $(document).on('submit', '#form-add-upd', function(e) {
             e.preventDefault();
 
-            $('#id_klasifikasi').attr('required', 'required');
-            $('#image').attr('required', 'required');
+            $('#nama').attr('required', 'required');
+            $('#deskripsi').attr('required', 'required');
 
             if ($('#form-add-upd').parsley().isValid() == true) {
                 $.ajax({
@@ -126,17 +108,6 @@
         $(document).on('click', '#btn-add', function() {
             $('#judul-add-upd').html('Tambah');
 
-            $('#id_basis').removeAttr('value');
-
-            $("input[name*='image']").removeAttr('disabled');
-            $("input[name*='image']").attr('id', 'image');
-            $('#image').val('');
-
-            $('#lihat_gambar').empty();
-            $('#lihat_gambar').removeAttr('style');
-            $('#centang_gambar').empty();
-            $('#centang_gambar').removeAttr('style');
-
             $('#form-add-upd').parsley().reset();
             $('#form-add-upd')[0].reset();
         });
@@ -149,7 +120,7 @@
 
             $.ajax({
                 type: "POST",
-                url: "<?= admin_url() ?>basis/get",
+                url: "<?= admin_url() ?>classification/get",
                 dataType: 'json',
                 data: {
                     id: ini.data('id'),
@@ -158,16 +129,17 @@
                 beforeSend: function() {
                     $('#judul-add-upd').html('Ubah');
 
+                    $('#form-add-upd').parsley().destroy();
+                    $('#form-add-upd')[0].reset();
+
                     ini.attr('disabled', 'disabled');
                     ini.html('<i class="fa fa-spinner"></i>&nbsp;Menunggu...');
                 },
                 success: function(response) {
                     csrf.val(response.csrf);
-
-                    $('#id_basis').val(response.id_basis);
-                    $('#id_classification').val(response.id_classification).trigger('change');
-                    $('#kriteria_1').val(response.kriteria_1);
-                    $('#kriteria_2').val(response.kriteria_2);
+                    $('#id_classification').val(response.id_classification);
+                    $('#nama').val(response.nama);
+                    $('#deskripsi').val(response.deskripsi);
 
                     ini.removeAttr('disabled');
                     ini.html('<i class="fa fa-pencil"></i>&nbsp;Ubah');
@@ -191,7 +163,7 @@
                 if (del) {
                     $.ajax({
                         type: "post",
-                        url: "<?= admin_url() ?>basis/process_del",
+                        url: "<?= admin_url() ?>classification/process_del",
                         dataType: 'json',
                         data: {
                             id: ini.data('id'),
