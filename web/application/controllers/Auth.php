@@ -17,7 +17,7 @@ class Auth extends MY_Controller
         checking_role_session($this->role);
 
         if (empty($this->username)) {
-            $this->load->view('login/view');
+            $this->load->view('pages/login/view');
         } else {
             $this->auth($this->username, $this->password);
         }
