@@ -214,120 +214,114 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <h5 class="w-75 p-2">Validitas K3</h5>
-                            </div>
+                        <a class="btn btn-primary" data-toggle="collapse" href="#cardOne" role="button" aria-expanded="false" aria-controls="cardOne">
+                            Validitas K3
+                        </a>
+                        &nbsp;
+                        <a class="btn btn-primary" data-toggle="collapse" href="#cardTwo" role="button" aria-expanded="false" aria-controls="cardTwo">
+                            Weight Voting
+                        </a>
+                        &nbsp;
+                        <a class="btn btn-primary" data-toggle="collapse" href="#cardThree" role="button" aria-expanded="false" aria-controls="cardThree">
+                            Result
+                        </a>
+                    </div>
+                    <div class="collapse" id="cardOne">
+                        <div class="card-block table-border-style">
+                            <table class="table table-striped table-bordered nowrap" id="tabel-rangking" style="width: 100%;">
+                                <thead>
+                                    <tr align="center">
+                                        <th>Contrast</th>
+                                        <th>Correlation</th>
+                                        <th>Energy</th>
+                                        <th>Homogeneity</th>
+                                        <th>Klasifikasi</th>
+                                        <th>Validitas</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    $e = $ini->processValiditasKToN($b, $data_training, $r3['label'], 3);
+
+                                    foreach ($e as $k_e => $v_e) { ?>
+                                        <tr align="center">
+                                            <td><?= $data_training[$k_e]->contrast ?></td>
+                                            <td><?= $data_training[$k_e]->correlation ?></td>
+                                            <td><?= $data_training[$k_e]->energy ?></td>
+                                            <td><?= $data_training[$k_e]->homogeneity ?></td>
+                                            <td><?= $data_training[$k_e]->nama ?></td>
+                                            <td><?= $v_e ?></td>
+                                        </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-                    <div class="card-block table-border-style">
-                        <table class="table table-striped table-bordered nowrap" id="tabel-rangking" style="width: 100%;">
-                            <thead>
-                                <tr align="center">
-                                    <th>Contrast</th>
-                                    <th>Correlation</th>
-                                    <th>Energy</th>
-                                    <th>Homogeneity</th>
-                                    <th>Klasifikasi</th>
-                                    <th>Validitas</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                $e = $ini->processValiditasKToN($b, $data_training, $r3['label'], 3);
-
-                                foreach ($e as $k_e => $v_e) { ?>
+                    <div class="collapse" id="cardTwo">
+                        <div class="card-block table-border-style">
+                            <table class="table table-striped table-bordered nowrap" id="tabel-rangking" style="width: 100%;">
+                                <thead>
                                     <tr align="center">
-                                        <td><?= $data_training[$k_e]->contrast ?></td>
-                                        <td><?= $data_training[$k_e]->correlation ?></td>
-                                        <td><?= $data_training[$k_e]->energy ?></td>
-                                        <td><?= $data_training[$k_e]->homogeneity ?></td>
-                                        <td><?= $data_training[$k_e]->nama ?></td>
-                                        <td><?= $v_e ?></td>
+                                        <th>Contrast</th>
+                                        <th>Correlation</th>
+                                        <th>Energy</th>
+                                        <th>Homogeneity</th>
+                                        <th>Klasifikasi</th>
+                                        <th>Weight Voting</th>
                                     </tr>
-                                <?php } ?>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <h5 class="w-75 p-2">Weight Voting</h5>
-                            </div>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    $f = $ini->processWeightVoting($b, $e);
+
+                                    foreach ($f as $k_f => $v_f) { ?>
+                                        <tr align="center">
+                                            <td><?= $data_training[$k_f]->contrast ?></td>
+                                            <td><?= $data_training[$k_f]->correlation ?></td>
+                                            <td><?= $data_training[$k_f]->energy ?></td>
+                                            <td><?= $data_training[$k_f]->homogeneity ?></td>
+                                            <td><?= $data_training[$k_f]->nama ?></td>
+                                            <td><?= $v_f['weight'] ?></td>
+                                        </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-                    <div class="card-block table-border-style">
-                        <table class="table table-striped table-bordered nowrap" id="tabel-rangking" style="width: 100%;">
-                            <thead>
-                                <tr align="center">
-                                    <th>Contrast</th>
-                                    <th>Correlation</th>
-                                    <th>Energy</th>
-                                    <th>Homogeneity</th>
-                                    <th>Klasifikasi</th>
-                                    <th>Weight Voting</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                $f = $ini->processWeightVoting($b, $e);
-
-                                foreach ($f as $k_f => $v_f) { ?>
+                    <div class="collapse" id="cardThree">
+                        <div class="card-block table-border-style">
+                            <table class="table table-striped table-bordered nowrap" id="tabel-rangking" style="width: 100%;">
+                                <thead>
                                     <tr align="center">
-                                        <td><?= $data_training[$k_f]->contrast ?></td>
-                                        <td><?= $data_training[$k_f]->correlation ?></td>
-                                        <td><?= $data_training[$k_f]->energy ?></td>
-                                        <td><?= $data_training[$k_f]->homogeneity ?></td>
-                                        <td><?= $data_training[$k_f]->nama ?></td>
-                                        <td><?= $v_f['weight'] ?></td>
+                                        <th>Contrast</th>
+                                        <th>Correlation</th>
+                                        <th>Energy</th>
+                                        <th>Homogeneity</th>
+                                        <th>Klasifikasi</th>
+                                        <th>Euclidian Distance</th>
+                                        <th>Validitas</th>
+                                        <th>Weight Voting</th>
                                     </tr>
-                                <?php } ?>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <h5 class="w-75 p-2">Result</h5>
-                            </div>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    $f = $ini->processWeightVoting($b, $e);
+
+                                    foreach ($f as $k_f => $v_f) { ?>
+                                        <tr align="center">
+                                            <td><?= $data_training[$k_f]->contrast ?></td>
+                                            <td><?= $data_training[$k_f]->correlation ?></td>
+                                            <td><?= $data_training[$k_f]->energy ?></td>
+                                            <td><?= $data_training[$k_f]->homogeneity ?></td>
+                                            <td><?= $data_training[$k_f]->nama ?></td>
+                                            <td><?= $v_f['euclidian'] ?></td>
+                                            <td><?= $v_f['validitas'] ?></td>
+                                            <td><?= $v_f['weight'] ?></td>
+                                        </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
                         </div>
-                    </div>
-                    <div class="card-block table-border-style">
-                        <table class="table table-striped table-bordered nowrap" id="tabel-rangking" style="width: 100%;">
-                            <thead>
-                                <tr align="center">
-                                    <th>Contrast</th>
-                                    <th>Correlation</th>
-                                    <th>Energy</th>
-                                    <th>Homogeneity</th>
-                                    <th>Klasifikasi</th>
-                                    <th>Euclidian Distance</th>
-                                    <th>Validitas</th>
-                                    <th>Weight Voting</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                $f = $ini->processWeightVoting($b, $e);
-
-                                foreach ($f as $k_f => $v_f) { ?>
-                                    <tr align="center">
-                                        <td><?= $data_training[$k_f]->contrast ?></td>
-                                        <td><?= $data_training[$k_f]->correlation ?></td>
-                                        <td><?= $data_training[$k_f]->energy ?></td>
-                                        <td><?= $data_training[$k_f]->homogeneity ?></td>
-                                        <td><?= $data_training[$k_f]->nama ?></td>
-                                        <td><?= $v_f['euclidian'] ?></td>
-                                        <td><?= $v_f['validitas'] ?></td>
-                                        <td><?= $v_f['weight'] ?></td>
-                                    </tr>
-                                <?php } ?>
-                            </tbody>
-                        </table>
                     </div>
                 </div>
                 <!-- end:: card -->
