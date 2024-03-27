@@ -18,6 +18,7 @@
     </div>
 </section>
 
+
 <section class="progress-area gray-bg" id="progress_page">
     <div class="container">
         <div class="row">
@@ -28,8 +29,8 @@
                     <h3 class="dark-color wow fadeInUp" data-wow-delay="0.4s">Grat Application Ever</h3>
                     <div class="space-20"></div>
                     <div class="desc wow fadeInUp" data-wow-delay="0.6s">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiing elit, sed do eiusmod tempor incididunt ut
-                            labore et laborused sed do eiusmod tempor incididunt ut labore et laborused.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiing elit, sed do eiusmod tempor incididunt
+                            ut labore et laborused sed do eiusmod tempor incididunt ut labore et laborused.</p>
                     </div>
                     <div class="space-50"></div>
                     <a href="#" class="bttn-default wow fadeInUp" data-wow-delay="0.8s">Learn More</a>
@@ -37,12 +38,13 @@
             </div>
             <div class="col-xs-12 col-md-6">
                 <figure class="mobile-image">
-                    <img src="<?= assets_url() ?>page/images/progress-phone.png" alt>
+                    <img src="<?= assets_url() ?>page/images/phone/progress-phone.png" alt>
                 </figure>
             </div>
         </div>
     </div>
 </section>
+
 
 <section class="video-area section-padding">
     <div class="container">
@@ -63,8 +65,8 @@
                     <h3 class="dark-color wow fadeInUp" data-wow-delay="0.4s">Grat Application Ever</h3>
                     <div class="space-20"></div>
                     <div class="desc wow fadeInUp" data-wow-delay="0.6s">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiing elit, sed do eiusmod tempor incididunt ut
-                            labore et laborused sed do eiusmod tempor incididunt ut labore et laborused.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiing elit, sed do eiusmod tempor incididunt
+                            ut labore et laborused sed do eiusmod tempor incididunt ut labore et laborused.</p>
                     </div>
                     <div class="space-50"></div>
                     <a href="#" class="bttn-default wow fadeInUp" data-wow-delay="0.8s">Learn More</a>
@@ -73,6 +75,7 @@
         </div>
     </div>
 </section>
+
 
 <section class="feature-area section-padding-top" id="features_page">
     <div class="container">
@@ -115,7 +118,7 @@
             </div>
             <div class="hidden-xs hidden-sm col-md-4">
                 <figure class="mobile-image">
-                    <img src="<?= assets_url() ?>page/images/feature-image.png" alt="Feature Photo">
+                    <img src="<?= assets_url() ?>page/images/phone/feature-image.png" alt="Feature Photo">
                 </figure>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-4">
@@ -148,6 +151,7 @@
     </div>
 </section>
 
+
 <section class="testimonial-area" id="testimonial_page">
     <div class="container">
         <div class="row">
@@ -164,7 +168,7 @@
                 <div class="team-slide">
                     <div class="team-box">
                         <div class="team-image">
-                            <img src="<?= assets_url() ?>page/images/team-1.png" alt>
+                            <img src="<?= assets_url() ?>page/images/team/team-1.png" alt>
                         </div>
                         <h4>Ashekur Rahman</h4>
                         <h6 class="position">Art Dirrector</h6>
@@ -173,7 +177,7 @@
                     </div>
                     <div class="team-box">
                         <div class="team-image">
-                            <img src="<?= assets_url() ?>page/images/team-2.jpg" alt>
+                            <img src="<?= assets_url() ?>page/images/team/team-2.jpg" alt>
                         </div>
                         <h4>Ashekur Rahman</h4>
                         <h6 class="position">Art Dirrector</h6>
@@ -182,7 +186,7 @@
                     </div>
                     <div class="team-box">
                         <div class="team-image">
-                            <img src="<?= assets_url() ?>page/images/team-3.jpg" alt>
+                            <img src="<?= assets_url() ?>page/images/team/team-3.jpg" alt>
                         </div>
                         <h4>Ashekur Rahman</h4>
                         <h6 class="position">Art Dirrector</h6>
@@ -191,7 +195,7 @@
                     </div>
                     <div class="team-box">
                         <div class="team-image">
-                            <img src="<?= assets_url() ?>page/images/team-1.png" alt>
+                            <img src="<?= assets_url() ?>page/images/team/team-1.png" alt>
                         </div>
                         <h4>Ashekur Rahman</h4>
                         <h6 class="position">Art Dirrector</h6>
@@ -200,7 +204,7 @@
                     </div>
                     <div class="team-box">
                         <div class="team-image">
-                            <img src="<?= assets_url() ?>page/images/team-2.jpg" alt>
+                            <img src="<?= assets_url() ?>page/images/team/team-2.jpg" alt>
                         </div>
                         <h4>Ashekur Rahman</h4>
                         <h6 class="position">Art Dirrector</h6>
@@ -209,7 +213,7 @@
                     </div>
                     <div class="team-box">
                         <div class="team-image">
-                            <img src="<?= assets_url() ?>page/images/team-3.jpg" alt>
+                            <img src="<?= assets_url() ?>page/images/team/team-3.jpg" alt>
                         </div>
                         <h4>Ashekur Rahman</h4>
                         <h6 class="position">Art Dirrector</h6>
@@ -222,25 +226,17 @@
     </div>
 </section>
 
+
 <section class="gallery-area section-padding" id="gallery_page">
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12 col-sm-6 gallery-slider">
                 <div class="gallery-slide">
-                    <div class="item"><img src="<?= assets_url() ?>page/images/gallery-1.jpg" alt></div>
-                    <div class="item"><img src="<?= assets_url() ?>page/images/gallery-2.jpg" alt></div>
-                    <div class="item"><img src="<?= assets_url() ?>page/images/gallery-3.jpg" alt></div>
-                    <div class="item"><img src="<?= assets_url() ?>page/images/gallery-4.jpg" alt></div>
-                    <div class="item"><img src="<?= assets_url() ?>page/images/gallery-1.jpg" alt></div>
-                    <div class="item"><img src="<?= assets_url() ?>page/images/gallery-2.jpg" alt></div>
-                    <div class="item"><img src="<?= assets_url() ?>page/images/gallery-3.jpg" alt></div>
-                    <div class="item"><img src="<?= assets_url() ?>page/images/gallery-1.jpg" alt></div>
-                    <div class="item"><img src="<?= assets_url() ?>page/images/gallery-2.jpg" alt></div>
-                    <div class="item"><img src="<?= assets_url() ?>page/images/gallery-3.jpg" alt></div>
-                    <div class="item"><img src="<?= assets_url() ?>page/images/gallery-4.jpg" alt></div>
-                    <div class="item"><img src="<?= assets_url() ?>page/images/gallery-1.jpg" alt></div>
-                    <div class="item"><img src="<?= assets_url() ?>page/images/gallery-2.jpg" alt></div>
-                    <div class="item"><img src="<?= assets_url() ?>page/images/gallery-3.jpg" alt></div>
+                    <div class="item"><img src="<?= assets_url() ?>page/images/gallery/gallery-1.jpg" alt></div>
+                    <div class="item"><img src="<?= assets_url() ?>page/images/gallery/gallery-2.jpg" alt></div>
+                    <div class="item"><img src="<?= assets_url() ?>page/images/gallery/gallery-3.jpg" alt></div>
+                    <div class="item"><img src="<?= assets_url() ?>page/images/gallery/gallery-4.jpg" alt></div>
+                    <div class="item"><img src="<?= assets_url() ?>page/images/gallery/gallery-5.jpg" alt></div>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-5 col-lg-3">
@@ -261,6 +257,7 @@
     </div>
 </section>
 
+
 <section class="section-padding">
     <div class="container">
         <div class="row">
@@ -268,8 +265,8 @@
                 <div class="page-title">
                     <h5 class="title wow fadeInUp" data-wow-delay="0.2s">Our features</h5>
                     <div class="space-10"></div>
-                    <h3 class="dark-color wow fadeInUp" data-wow-delay="0.4s">Aour Approach of Design is Prety Simple
-                        and Clear</h3>
+                    <h3 class="dark-color wow fadeInUp" data-wow-delay="0.4s">Aour Approach of Design is Prety
+                        Simple and Clear</h3>
                 </div>
                 <div class="space-20"></div>
                 <div class="desc wow fadeInUp" data-wow-delay="0.6s">
@@ -309,12 +306,12 @@
     </div>
 </section>
 
-<div class="download-area overlay">
+<section class="download-area overlay">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-6 hidden-sm">
                 <figure class="mobile-image">
-                    <img src="<?= assets_url() ?>page/images/download-image.png" alt>
+                    <img src="<?= assets_url() ?>page/images/phone/download-image.png" alt>
                 </figure>
             </div>
             <div class="col-xs-12 col-md-6 section-padding">
@@ -323,14 +320,13 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam possimus eaque magnam eum
                     praesentium unde.</p>
                 <div class="space-60"></div>
-                <a href="#" class="bttn-white sq"><img src="<?= assets_url() ?>page/images/apple-icon.png"
-                        alt="apple icon"> Apple Store</a>
-                <a href="#" class="bttn-white sq"><img src="<?= assets_url() ?>page/images/play-store-icon.png"
-                        alt="Play Store Icon"> Play Store</a>
+                <a href="#" class="bttn-white sq"><img src="<?= assets_url() ?>page/images/apple-icon.png" alt="apple icon"> Apple Store</a>
+                <a href="#" class="bttn-white sq"><img src="<?= assets_url() ?>page/images/play-store-icon.png" alt="Play Store Icon"> Play
+                    Store</a>
             </div>
         </div>
     </div>
-</div>
+</section>
 
 <section class="section-padding price-area" id="price_page">
     <div class="container">
@@ -418,6 +414,7 @@
         </div>
     </div>
 </section>
+
 
 <section id="questions_page" class="questions-area section-padding">
     <div class="container">

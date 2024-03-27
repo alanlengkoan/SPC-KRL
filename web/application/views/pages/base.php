@@ -50,7 +50,9 @@
             </div>
             <div class="collapse navbar-collapse" id="primary_menu">
                 <ul class="nav navbar-nav mainmenu">
-                    <li class="active"><a href="#home_page">Home</a></li>
+                    <li class="active">
+                        <a href="#home_page">Home</a>
+                    </li>
                     <li>
                         <a href="#about_page">About</a>
                     </li>
@@ -67,17 +69,11 @@
                         <a href="#questions_page">FAQ</a>
                     </li>
                     <li>
-                        <a href="blog.html">Blog</a>
-                    </li>
-                    <li>
                         <a href="#contact_page">Contacts</a>
-                    </li>
-                    <li>
-                        <a href="<?= login_url() ?>">Login</a>
                     </li>
                 </ul>
                 <div class="right-button hidden-xs">
-                    <a href="#">Sign Up</a>
+                    <a href="<?= login_url() ?>">Login</a>
                 </div>
             </div>
         </div>
@@ -88,7 +84,7 @@
             <div class="row">
                 <div class="col-xs-12 hidden-sm col-md-5">
                     <figure class="mobile-image wow fadeInUp" data-wow-delay="0.2s">
-                        <img src="<?= assets_url() ?>page/images/header-mobile.png" alt>
+                        <img src="<?= assets_url() ?>page/images/phone/header-mobile.png" alt>
                     </figure>
                 </div>
                 <div class="col-xs-12 col-md-7">
@@ -96,7 +92,8 @@
                     <h1 class="wow fadeInUp" data-wow-delay="0.4s">Start your amazing stuff through appy.</h1>
                     <div class="space-20"></div>
                     <div class="desc wow fadeInUp" data-wow-delay="0.6s">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiing elit, sed do eiusmod tempor incididunt ut labore et laborused sed do eiusmod tempor incididunt ut labore et laborused.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiing elit, sed do eiusmod tempor incididunt ut
+                            labore et laborused sed do eiusmod tempor incididunt ut labore et laborused.</p>
                     </div>
                     <div class="space-20"></div>
                     <a href="#" class="bttn-white wow fadeInUp" data-wow-delay="0.8s"><i class="lnr lnr-download"></i>Download App</a>
@@ -109,7 +106,7 @@
     <?php $this->load->view($content); ?>
     <!-- end:: content -->
 
-    <div class="subscribe-area section-padding">
+    <div class="subscribe-area overlay section-padding">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-8 col-sm-offset-2">
@@ -176,10 +173,10 @@
                 <div class="row">
                     <div class="col-xs-12 col-md-5">
 
-                        <span>Copyright &copy;
+                        <span>&copy;
                             <script>
                                 document.write(new Date().getFullYear());
-                            </script> All rights reserved | This template is made with <i class="lnr lnr-heart" aria-hidden="true"></i> by <a href="https://colorlib.com/" target="_blank">Colorlib</a>
+                            </script>. Developed with <i class="lnr lnr-heart"></i> by <a href="https://alanlengkoan.netlify.app/">alanlengkoan</a>
                         </span>
 
                         <div class="space-30 hidden visible-xs"></div>
