@@ -16,16 +16,8 @@ class ResultKonsultasi extends StatefulWidget {
 
 class _ResultKonsultasiState extends State<ResultKonsultasi> {
   Map konsultasi = {};
-  List<String> imgList = [];
 
   _getData() async {
-    imgList = [
-      Network().baseUrl() + '/konsultasi/img_one/${widget.id}',
-      Network().baseUrl() + '/konsultasi/img_two/${widget.id}',
-      Network().baseUrl() + '/konsultasi/img_three/${widget.id}',
-      Network().baseUrl() + '/konsultasi/img_four/${widget.id}',
-    ];
-
     var response = await Network().getKonsultasiResult(widget.id);
     var body = json.decode(response.body);
     print(body);
@@ -62,7 +54,7 @@ class _ResultKonsultasiState extends State<ResultKonsultasi> {
                 ),
                 Container(
                   child: Text(
-                    konsultasi['konsultasi']['nama'],
+                    konsultasi['nama'],
                   ),
                 ),
               ],
@@ -77,7 +69,7 @@ class _ResultKonsultasiState extends State<ResultKonsultasi> {
                 ),
                 Container(
                   child: Text(
-                    konsultasi['klasifikasi'],
+                    konsultasi['classification'],
                   ),
                 ),
               ],
@@ -92,7 +84,7 @@ class _ResultKonsultasiState extends State<ResultKonsultasi> {
                 ),
                 Expanded(
                   child: Text(
-                    konsultasi['deskripsi'],
+                    konsultasi['descripton'],
                     textAlign: TextAlign.justify,
                   ),
                 ),
@@ -101,39 +93,14 @@ class _ResultKonsultasiState extends State<ResultKonsultasi> {
             Row(
               children: <Widget>[
                 Container(
-                  margin:
-                      EdgeInsets.only(left: 25, right: 10, top: 25, bottom: 25),
+                  margin: EdgeInsets.all(25.0),
                   child: Text(
-                    'R :',
+                    'Contrast :',
                   ),
                 ),
-                Container(
+                Expanded(
                   child: Text(
-                    konsultasi['konsultasi']['r'].toString(),
-                  ),
-                ),
-                Container(
-                  margin:
-                      EdgeInsets.only(left: 25, right: 10, top: 25, bottom: 25),
-                  child: Text(
-                    'G :',
-                  ),
-                ),
-                Container(
-                  child: Text(
-                    konsultasi['konsultasi']['g'].toString(),
-                  ),
-                ),
-                Container(
-                  margin:
-                      EdgeInsets.only(left: 25, right: 10, top: 25, bottom: 25),
-                  child: Text(
-                    'B :',
-                  ),
-                ),
-                Container(
-                  child: Text(
-                    konsultasi['konsultasi']['b'].toString(),
+                    konsultasi['contrast'].toString(),
                   ),
                 ),
               ],
@@ -141,54 +108,47 @@ class _ResultKonsultasiState extends State<ResultKonsultasi> {
             Row(
               children: <Widget>[
                 Container(
-                  margin:
-                      EdgeInsets.only(left: 25, right: 10, top: 25, bottom: 25),
+                  margin: EdgeInsets.all(25.0),
                   child: Text(
-                    'H :',
+                    'Correlation :',
                   ),
                 ),
-                Container(
+                Expanded(
                   child: Text(
-                    konsultasi['konsultasi']['h'].toString(),
-                  ),
-                ),
-                Container(
-                  margin:
-                      EdgeInsets.only(left: 25, right: 10, top: 25, bottom: 25),
-                  child: Text(
-                    'S :',
-                  ),
-                ),
-                Container(
-                  child: Text(
-                    konsultasi['konsultasi']['s'].toString(),
-                  ),
-                ),
-                Container(
-                  margin:
-                      EdgeInsets.only(left: 25, right: 10, top: 25, bottom: 25),
-                  child: Text(
-                    'V :',
-                  ),
-                ),
-                Container(
-                  child: Text(
-                    konsultasi['konsultasi']['v'].toString(),
+                    konsultasi['correlation'].toString(),
                   ),
                 ),
               ],
             ),
-            ListView(
-              shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
-              children: imgList
-                  .map(
-                    (imgUrl) => Container(
-                      margin: const EdgeInsets.only(top: 10, bottom: 10),
-                      child: Image.network(imgUrl, fit: BoxFit.cover),
-                    ),
-                  )
-                  .toList(),
+            Row(
+              children: <Widget>[
+                Container(
+                  margin: EdgeInsets.all(25.0),
+                  child: Text(
+                    'Energy :',
+                  ),
+                ),
+                Expanded(
+                  child: Text(
+                   konsultasi['energy'].toString(),
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                Container(
+                  margin: EdgeInsets.all(25.0),
+                  child: Text(
+                    'Homogeneity :',
+                  ),
+                ),
+                Expanded(
+                  child: Text(
+                     konsultasi['homogeneity'].toString(),
+                  ),
+                ),
+              ],
             ),
           ],
         ),

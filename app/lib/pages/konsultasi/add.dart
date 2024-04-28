@@ -44,15 +44,6 @@ class _AddKonsultasiState extends State<AddKonsultasi> {
     }
   }
 
-  TextEditingController controllerNama = TextEditingController();
-
-  String? _validasiNama(String? value) {
-    if (value!.isEmpty) {
-      return 'Nama Pelapor, Wajib diisi!';
-    }
-    return null;
-  }
-
   // untuk upload atau ambil gambar
   void _uploadOrTakeImage(ImageSource imageSource) async {
     var imageUpload = await picker.pickImage(source: imageSource);
@@ -86,7 +77,7 @@ class _AddKonsultasiState extends State<AddKonsultasi> {
       _confidence = listOutputs[0]['confidence'].toStringAsFixed(2);
 
       print(_label);
-      if (_label != "BUKAN TELUR") {
+      if (_confidence != "0.00") {
         _isDeactivated = true;
       }
     });
@@ -99,7 +90,6 @@ class _AddKonsultasiState extends State<AddKonsultasi> {
 
     var data = {
       "id_users": preferences.getString('id_users'),
-      "nama": controllerNama.text,
       "image": nameImage,
       "loc_image": imageLoc,
     };
@@ -199,14 +189,6 @@ class _AddKonsultasiState extends State<AddKonsultasi> {
                 autovalidateMode: AutovalidateMode.onUserInteraction,
                 child: Column(
                   children: <Widget>[
-                    TextFormField(
-                      validator: _validasiNama,
-                      controller: controllerNama,
-                      decoration: const InputDecoration(
-                        labelText: 'Nama *',
-                        hintText: 'Masukkan nama Anda',
-                      ),
-                    ),
                     Container(
                       padding: const EdgeInsets.only(top: 10),
                       child: Column(

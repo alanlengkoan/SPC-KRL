@@ -27,15 +27,12 @@ class Consultation extends MY_Controller
     // untuk proses
     public function process()
     {
-        $post = $this->input->post(NULL, TRUE);
-
         $image = add_picture('image');
 
         if ($image['status']) {
 
             $data = [
                 'id_users' => $this->id_users,
-                'name'     => $post['nama'],
                 'image'    => $image['data']['file_name'],
             ];
 
@@ -82,6 +79,7 @@ class Consultation extends MY_Controller
 
         $data = [
             'ini'                 => $this,
+            'id_consultation'     => $id,
             'data_training'       => $data_training,
             'data_test'           => $data_test,
             'data_classification' => $data_classification->result(),
@@ -160,6 +158,7 @@ class Consultation extends MY_Controller
         foreach ($classification as $key => $value) {
             if (!empty($counts[$value->nama])) {
                 $result[] = [
+                    'id'    => $value->id_classification,
                     'label' => $value->nama,
                     'count' => $counts[$value->nama]
                 ];

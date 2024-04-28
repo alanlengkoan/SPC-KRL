@@ -122,7 +122,7 @@ class _HomeState extends State<Home> {
           email: email,
         ),
         appBar: AppBar(
-          title: Text('EDA'),
+          title: Text('SDA'),
           centerTitle: true,
           backgroundColor: const Color(0xFF1C6758),
         ),

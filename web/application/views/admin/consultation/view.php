@@ -40,12 +40,6 @@
                             <input type="hidden" id="<?= $this->security->get_csrf_token_name() ?>" name="<?= $this->security->get_csrf_token_name() ?>" value="<?= $this->security->get_csrf_hash() ?>" />
 
                             <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Nama *</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="nama" id="nama" placeholder="Masukkan nama Anda" />
-                                </div>
-                            </div>
-                            <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Gambar *</label>
                                 <div class="col-sm-9">
                                     <input type="file" class="form-control" name="image" id="image" />

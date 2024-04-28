@@ -199,6 +199,16 @@
                                 $r5 = $ini->processClasification($k5, $data_classification);
                                 $r7 = $ini->processClasification($k7, $data_classification);
                                 $r9 = $ini->processClasification($k9, $data_classification);
+
+                                $this->db->update(
+                                    'tb_consultation',
+                                    [
+                                        'id_classification' => $r3['id'],
+                                    ],
+                                    [
+                                        'id_consultation' => $id_consultation
+                                    ]
+                                );
                                 ?>
                                 <tr align="center">
                                     <td><?= $r1['label'] ?></td>

@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'SDA',
+      title: 'SDA', 
       debugShowCheckedModeBanner: false,
       home: CheckAuth(),
     );

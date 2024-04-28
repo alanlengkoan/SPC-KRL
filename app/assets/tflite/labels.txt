@@ -1,4 +1,3 @@
-0 Telur Coklat
-1 Telur Coklat Putih
-2 Telur Putih
-3 Bukan Telur
+0 Rumput Laut Type I
+1 Rumput Laut Type II
+2 Rumput Laut Type III

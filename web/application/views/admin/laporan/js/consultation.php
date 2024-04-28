@@ -35,8 +35,8 @@
                     className: 'text-center',
                 },
                 {
-                    title: 'Nama',
-                    data: 'name',
+                    title: 'Keterangan',
+                    data: 'keterangan',
                     className: 'text-center',
                 },
                 {
