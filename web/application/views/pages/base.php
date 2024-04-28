@@ -71,10 +71,10 @@
                     <li>
                         <a href="#contact_page">Contacts</a>
                     </li>
+                    <li>
+                        <a href="<?= login_url() ?>">Login</a>
+                    </li>
                 </ul>
-                <div class="right-button hidden-xs">
-                    <a href="<?= login_url() ?>">Login</a>
-                </div>
             </div>
         </div>
     </nav>
@@ -96,7 +96,7 @@
                             labore et laborused sed do eiusmod tempor incididunt ut labore et laborused.</p>
                     </div>
                     <div class="space-20"></div>
-                    <a href="#" class="bttn-white wow fadeInUp" data-wow-delay="0.8s"><i class="lnr lnr-download"></i>Download App</a>
+                    <a href="<?= assets_url() ?>download/sda.apk" class="bttn-white wow fadeInUp" data-wow-delay="0.8s"><i class="lnr lnr-download"></i>Download App</a>
                 </div>
             </div>
         </div>
