@@ -66,6 +66,7 @@ class Consultation extends MY_Controller
         $homogeneity = $this->imagesampler->calculateHomogeneity($glcm);
 
         $data_test = [
+            'image'       => $get_consultation['image'],
             'contrast'    => $contrast,
             'correlation' => $correlation,
             'energy'      => $energy,

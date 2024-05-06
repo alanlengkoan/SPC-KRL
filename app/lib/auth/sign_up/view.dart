@@ -13,6 +13,7 @@ class SignUp extends StatefulWidget {
 class _SignUpState extends State<SignUp> {
   final _formKey = GlobalKey<FormState>();
   bool _klik = false;
+  bool _passwordVisible = true;
 
   TextEditingController controllerNama = TextEditingController();
   TextEditingController controllerEmail = TextEditingController();
@@ -107,6 +108,12 @@ class _SignUpState extends State<SignUp> {
         _klik = false;
       });
     }
+  }
+
+  _showPassword() {
+    setState(() {
+      _passwordVisible = !_passwordVisible;
+    });
   }
 
   @override
@@ -230,7 +237,7 @@ class _SignUpState extends State<SignUp> {
                         TextFormField(
                           validator: _validasiPassword,
                           controller: controllerPassword,
-                          obscureText: true,
+                          obscureText: _passwordVisible,
                           decoration: InputDecoration(
                             labelText: 'Password',
                             labelStyle: TextStyle(color: Colors.black87),
@@ -240,10 +247,12 @@ class _SignUpState extends State<SignUp> {
                             ),
                             suffixIcon: GestureDetector(
                               child: Icon(
-                                Icons.visibility,
+                                _passwordVisible
+                                    ? Icons.visibility
+                                    : Icons.visibility_off,
                                 color: Color(0xFF1C6758),
                               ),
-                              onTap: () {},
+                              onTap: _showPassword,
                             ),
                             contentPadding:
                                 EdgeInsets.fromLTRB(20, 10, -20, 10),

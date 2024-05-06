@@ -74,6 +74,7 @@ class Consultation extends MY_Controller
         $homogeneity = $this->imagesampler->calculateHomogeneity($glcm);
 
         $data_test = [
+            'image'       => $get_consultation['image'],
             'contrast'    => $contrast,
             'correlation' => $correlation,
             'energy'      => $energy,
@@ -93,6 +94,7 @@ class Consultation extends MY_Controller
 
         $r3 = $this->processClasification($k3, $data_classification);
 
+        // untuk update hasil consultation
         $this->db->update(
             'tb_consultation',
             [
@@ -100,6 +102,19 @@ class Consultation extends MY_Controller
             ],
             [
                 'id_consultation' => $id
+            ]
+        );
+
+        // untuk insert datatraining hasil consultation
+        $this->db->insert(
+            'tb_datatraining',
+            [
+                'id_classification' => $r3['id'],
+                'image'             => $data_test['image'],
+                'contrast'          => $data_test['contrast'],
+                'correlation'       => $data_test['correlation'],
+                'energy'            => $data_test['energy'],
+                'homogeneity'       => $data_test['homogeneity']
             ]
         );
 

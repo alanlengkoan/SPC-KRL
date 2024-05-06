@@ -1,3 +1,4 @@
-0 Rumput Laut Type I
-1 Rumput Laut Type II
-2 Rumput Laut Type III
+0 RUMPUT LAUT 
+1 RUMPUT LAUT  
+2 RUMPUT LAUT   
+3 BUKAN RUMPUT LAUT

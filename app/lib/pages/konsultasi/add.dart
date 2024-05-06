@@ -26,11 +26,8 @@ class _AddKonsultasiState extends State<AddKonsultasi> {
   var _validasiImageUpload = const Text('Belum ada gambar yang diambil!');
   var tfResponse;
   var _label;
-  var _confidence;
 
   bool _loadingLoad = true;
-  bool _isDeactivated = false;
-
   // untuk load model
   Future loadModel() async {
     try {
@@ -74,12 +71,6 @@ class _AddKonsultasiState extends State<AddKonsultasi> {
           .replaceAll(RegExp(r'[0-9]'), '')
           .toUpperCase()
           .trim();
-      _confidence = listOutputs[0]['confidence'].toStringAsFixed(2);
-
-      print(_label);
-      if (_confidence != "0.00") {
-        _isDeactivated = true;
-      }
     });
   }
 
@@ -88,63 +79,83 @@ class _AddKonsultasiState extends State<AddKonsultasi> {
     String nameImage = _imageUpload!.path.split("/").last;
     String imageLoc = base64Encode(_imageUpload!.readAsBytesSync());
 
-    var data = {
-      "id_users": preferences.getString('id_users'),
-      "image": nameImage,
-      "loc_image": imageLoc,
-    };
+    if (_label == 'BUKAN RUMPUT LAUT') {
+      Alert(
+        context: context,
+        type: AlertType.error,
+        title: 'Gagal',
+        desc: 'Gambar bukan rumput laut!',
+        buttons: [
+          DialogButton(
+            child: Text(
+              'OK',
+              style: const TextStyle(color: Colors.white, fontSize: 20),
+            ),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            width: 120,
+          )
+        ],
+      ).show();
+    } else {
+      var data = {
+        "id_users": preferences.getString('id_users'),
+        "image": nameImage,
+        "loc_image": imageLoc,
+      };
 
-    var response = await Network().addKonsultasi(data);
-    var body = json.decode(response.body);
-    print(body);
-    if (response.statusCode == 200) {
-      if (body['status']) {
-        Alert(
-          context: context,
-          type: AlertType.success,
-          title: body['title'],
-          desc: body['text'],
-          buttons: [
-            DialogButton(
-              child: Text(
-                body['button'],
-                style: const TextStyle(color: Colors.white, fontSize: 20),
-              ),
-              onPressed: () {
-                Navigator.pushAndRemoveUntil(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ResultKonsultasi(
-                      title: "Hasil Konsultasi",
-                      id: body['id'].toString(),
+      var response = await Network().addKonsultasi(data);
+      var body = json.decode(response.body);
+      if (response.statusCode == 200) {
+        if (body['status']) {
+          Alert(
+            context: context,
+            type: AlertType.success,
+            title: body['title'],
+            desc: body['text'],
+            buttons: [
+              DialogButton(
+                child: Text(
+                  body['button'],
+                  style: const TextStyle(color: Colors.white, fontSize: 20),
+                ),
+                onPressed: () {
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ResultKonsultasi(
+                        title: "Hasil Konsultasi",
+                        id: body['id'].toString(),
+                      ),
                     ),
-                  ),
-                  (route) => false,
-                );
-              },
-              width: 120,
-            )
-          ],
-        ).show();
-      } else {
-        Alert(
-          context: context,
-          type: AlertType.error,
-          title: body['title'],
-          desc: body['text'],
-          buttons: [
-            DialogButton(
-              child: Text(
-                body['button'],
-                style: const TextStyle(color: Colors.white, fontSize: 20),
-              ),
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              width: 120,
-            )
-          ],
-        ).show();
+                    (route) => false,
+                  );
+                },
+                width: 120,
+              )
+            ],
+          ).show();
+        } else {
+          Alert(
+            context: context,
+            type: AlertType.error,
+            title: body['title'],
+            desc: body['text'],
+            buttons: [
+              DialogButton(
+                child: Text(
+                  body['button'],
+                  style: const TextStyle(color: Colors.white, fontSize: 20),
+                ),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                width: 120,
+              )
+            ],
+          ).show();
+        }
       }
     }
   }
@@ -248,13 +259,7 @@ class _AddKonsultasiState extends State<AddKonsultasi> {
                           listOutputs.isEmpty
                               ? Text(
                                   'Silahkan upload atau ambil gambar terlebih dahulu!')
-                              : Container(
-                                  child: Column(
-                                  children: [
-                                    Text(_label),
-                                    Text(_confidence),
-                                  ],
-                                )),
+                              : Text(''),
                           Container(
                             margin: EdgeInsets.only(top: 5),
                             width: MediaQuery.of(context).size.width,
@@ -285,8 +290,7 @@ class _AddKonsultasiState extends State<AddKonsultasi> {
                               borderRadius: BorderRadius.circular(25),
                               child: MaterialButton(
                                 minWidth: double.infinity,
-                                onPressed:
-                                    _isDeactivated ? _validasiInput : null,
+                                onPressed: _validasiInput,
                                 disabledTextColor: Colors.black,
                                 disabledColor: Colors.black26,
                                 textColor: Colors.white,

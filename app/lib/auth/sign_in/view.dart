@@ -15,6 +15,7 @@ class SignIn extends StatefulWidget {
 class _SignInState extends State<SignIn> {
   final _formKey = GlobalKey<FormState>();
   bool _klik = false;
+  bool _passwordVisible = true;
 
   TextEditingController controllerUsername = TextEditingController();
   TextEditingController controllerPassword = TextEditingController();
@@ -112,6 +113,12 @@ class _SignInState extends State<SignIn> {
     }
   }
 
+  _showPassword() {
+    setState(() {
+      _passwordVisible = !_passwordVisible;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     _signInScreen() {
@@ -178,7 +185,7 @@ class _SignInState extends State<SignIn> {
                         TextFormField(
                           validator: _validasiPassword,
                           controller: controllerPassword,
-                          obscureText: true,
+                          obscureText: _passwordVisible,
                           decoration: InputDecoration(
                             labelText: 'Password',
                             labelStyle: TextStyle(color: Colors.black87),
@@ -188,10 +195,12 @@ class _SignInState extends State<SignIn> {
                             ),
                             suffixIcon: GestureDetector(
                               child: Icon(
-                                Icons.visibility,
+                                _passwordVisible
+                                    ? Icons.visibility
+                                    : Icons.visibility_off,
                                 color: Color(0xFF1C6758),
                               ),
-                              onTap: () {},
+                              onTap: _showPassword,
                             ),
                             contentPadding:
                                 EdgeInsets.fromLTRB(20, 10, -20, 10),

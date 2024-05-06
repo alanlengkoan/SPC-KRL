@@ -200,6 +200,7 @@
                                 $r7 = $ini->processClasification($k7, $data_classification);
                                 $r9 = $ini->processClasification($k9, $data_classification);
 
+                                // untuk update hasil consultation
                                 $this->db->update(
                                     'tb_consultation',
                                     [
@@ -209,6 +210,20 @@
                                         'id_consultation' => $id_consultation
                                     ]
                                 );
+
+                                // untuk insert datatraining hasil consultation
+                                $this->db->insert(
+                                    'tb_datatraining',
+                                    [
+                                        'id_classification' => $r3['id'],
+                                        'image'             => $data_test['image'],
+                                        'contrast'          => $data_test['contrast'],
+                                        'correlation'       => $data_test['correlation'],
+                                        'energy'            => $data_test['energy'],
+                                        'homogeneity'       => $data_test['homogeneity']
+                                    ]
+                                );
+
                                 ?>
                                 <tr align="center">
                                     <td><?= $r1['label'] ?></td>

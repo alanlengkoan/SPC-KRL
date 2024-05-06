@@ -64,6 +64,11 @@
                     },
                 },
                 {
+                    title: 'Tgl. Input',
+                    className: 'text-center',
+                    data: 'created_at',
+                },
+                {
                     title: 'Aksi',
                     responsivePriority: -1,
                     className: 'text-center',
