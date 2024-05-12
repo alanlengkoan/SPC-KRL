@@ -28,6 +28,8 @@ class _AddKonsultasiState extends State<AddKonsultasi> {
   var _label;
 
   bool _loadingLoad = true;
+  bool _buttonProcess = true;
+  String _buttonTextProcess = 'PROSES';
   // untuk load model
   Future loadModel() async {
     try {
@@ -93,6 +95,10 @@ class _AddKonsultasiState extends State<AddKonsultasi> {
             ),
             onPressed: () {
               Navigator.pop(context);
+              setState(() {
+                _buttonProcess = true;
+                _buttonTextProcess = 'PROSES';
+              });
             },
             width: 120,
           )
@@ -131,6 +137,10 @@ class _AddKonsultasiState extends State<AddKonsultasi> {
                     ),
                     (route) => false,
                   );
+                  setState(() {
+                    _buttonProcess = true;
+                    _buttonTextProcess = 'PROSES';
+                  });
                 },
                 width: 120,
               )
@@ -150,6 +160,10 @@ class _AddKonsultasiState extends State<AddKonsultasi> {
                 ),
                 onPressed: () {
                   Navigator.pop(context);
+                  setState(() {
+                    _buttonProcess = true;
+                    _buttonTextProcess = 'PROSES';
+                  });
                 },
                 width: 120,
               )
@@ -164,14 +178,12 @@ class _AddKonsultasiState extends State<AddKonsultasi> {
     if (_formKey.currentState!.validate() && _imageUpload != null) {
       _formKey.currentState!.save();
       setState(() {
-        _loadingLoad = false;
+        _buttonProcess = false;
+        _buttonTextProcess = 'LOADING...';
       });
 
       _addData();
-
-      setState(() {
-        _loadingLoad = true;
-      });
+      
     } else {
       setState(() {
         _validasiImageUpload = const Text('Belum ada gambar yang diambil!',
@@ -290,13 +302,14 @@ class _AddKonsultasiState extends State<AddKonsultasi> {
                               borderRadius: BorderRadius.circular(25),
                               child: MaterialButton(
                                 minWidth: double.infinity,
-                                onPressed: _validasiInput,
+                                onPressed:
+                                    _buttonProcess ? _validasiInput : null,
                                 disabledTextColor: Colors.black,
                                 disabledColor: Colors.black26,
                                 textColor: Colors.white,
                                 color: Color(0xFF1C6758),
                                 child: Text(
-                                  'PROSES',
+                                  _buttonTextProcess,
                                   style: TextStyle(
                                     // color: Colors.white,
                                     fontSize: 15,
