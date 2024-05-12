@@ -37,7 +37,7 @@ class Consultation extends MY_Controller
     {
         $post = $this->input->post(NULL, TRUE);
 
-        $parseImage  = base64_decode($post['loc_image']);
+        $parseImage = base64_decode($post['loc_image']);
 
         file_put_contents(upload_path('gambar') . '/' . $post['image'], $parseImage);
 
@@ -90,15 +90,15 @@ class Consultation extends MY_Controller
 
         $b = $this->processMinToMaxEuclidianDistance($a);
 
-        $k3 = $this->processClasificationKToN($b, $data_training, 3);
+        $k1 = $this->processClasificationKToN($b, $data_training, 1);
 
-        $r3 = $this->processClasification($k3, $data_classification);
+        $r1 = $this->processClasification($k1, $data_classification);
 
         // untuk update hasil consultation
         $this->db->update(
             'tb_consultation',
             [
-                'id_classification' => $r3['id'],
+                'id_classification' => $r1['id'],
             ],
             [
                 'id_consultation' => $id
@@ -109,7 +109,7 @@ class Consultation extends MY_Controller
         $this->db->insert(
             'tb_datatraining',
             [
-                'id_classification' => $r3['id'],
+                'id_classification' => $r1['id'],
                 'image'             => $data_test['image'],
                 'contrast'          => $data_test['contrast'],
                 'correlation'       => $data_test['correlation'],
@@ -120,8 +120,8 @@ class Consultation extends MY_Controller
 
         $consultation = [
             'nama'           => $get_consultation['users'],
-            'classification' => $get_consultation['nama'] ?? $r3['label'],
-            'descripton'     => $get_consultation['deskripsi'] ?? $r3['deskripsi'],
+            'classification' => $get_consultation['nama'] ?? $r1['label'],
+            'descripton'     => $get_consultation['deskripsi'] ?? $r1['deskripsi'],
             'image'          => $get_consultation['image'],
             'contrast'       => $contrast,
             'correlation'    => $correlation,

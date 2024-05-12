@@ -204,7 +204,7 @@
                                 $this->db->update(
                                     'tb_consultation',
                                     [
-                                        'id_classification' => $r3['id'],
+                                        'id_classification' => $r1['id'],
                                     ],
                                     [
                                         'id_consultation' => $id_consultation
@@ -215,7 +215,7 @@
                                 $this->db->insert(
                                     'tb_datatraining',
                                     [
-                                        'id_classification' => $r3['id'],
+                                        'id_classification' => $r1['id'],
                                         'image'             => $data_test['image'],
                                         'contrast'          => $data_test['contrast'],
                                         'correlation'       => $data_test['correlation'],
@@ -240,7 +240,7 @@
                 <div class="card">
                     <div class="card-header">
                         <a class="btn btn-primary" data-toggle="collapse" href="#cardOne" role="button" aria-expanded="false" aria-controls="cardOne">
-                            Validitas K3
+                            Validitas K1
                         </a>
                         &nbsp;
                         <a class="btn btn-primary" data-toggle="collapse" href="#cardTwo" role="button" aria-expanded="false" aria-controls="cardTwo">
@@ -266,7 +266,7 @@
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $e = $ini->processValiditasKToN($b, $data_training, $r3['label'], 3);
+                                    $e = $ini->processValiditasKToN($b, $data_training, $r1['label'], 1);
 
                                     foreach ($e as $k_e => $v_e) { ?>
                                         <tr align="center">
