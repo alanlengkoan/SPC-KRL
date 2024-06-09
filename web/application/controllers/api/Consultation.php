@@ -105,19 +105,6 @@ class Consultation extends MY_Controller
             ]
         );
 
-        // untuk insert datatraining hasil consultation
-        $this->db->insert(
-            'tb_datatraining',
-            [
-                'id_classification' => $r1['id'],
-                'image'             => $data_test['image'],
-                'contrast'          => $data_test['contrast'],
-                'correlation'       => $data_test['correlation'],
-                'energy'            => $data_test['energy'],
-                'homogeneity'       => $data_test['homogeneity']
-            ]
-        );
-
         $consultation = [
             'nama'           => $get_consultation['users'],
             'classification' => $get_consultation['nama'] ?? $r1['label'],
@@ -130,6 +117,23 @@ class Consultation extends MY_Controller
         ];
 
         $this->_response($consultation);
+    }
+
+    public function img($id)
+    {
+        $get_consultation = $this->m_consultation->get_detail($id)->row_array();
+
+        $url = upload_path('gambar') . $get_consultation['image'];
+
+        if (getExtension($get_consultation['image']) === 'png') {
+            header("Content-Type: image/png");
+        } else {
+            header("Content-Type: image/jpeg");
+        }
+
+        readfile($url);
+
+        exit();
     }
 
     public function processEuclidianDistance($data_training, $data_test)

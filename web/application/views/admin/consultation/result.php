@@ -211,19 +211,6 @@
                                     ]
                                 );
 
-                                // untuk insert datatraining hasil consultation
-                                $this->db->insert(
-                                    'tb_datatraining',
-                                    [
-                                        'id_classification' => $r1['id'],
-                                        'image'             => $data_test['image'],
-                                        'contrast'          => $data_test['contrast'],
-                                        'correlation'       => $data_test['correlation'],
-                                        'energy'            => $data_test['energy'],
-                                        'homogeneity'       => $data_test['homogeneity']
-                                    ]
-                                );
-
                                 ?>
                                 <tr align="center">
                                     <td><?= $r1['label'] ?></td>

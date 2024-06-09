@@ -16,8 +16,11 @@ class ResultKonsultasi extends StatefulWidget {
 
 class _ResultKonsultasiState extends State<ResultKonsultasi> {
   Map konsultasi = {};
+  String imgUrl = '';
 
   _getData() async {
+    imgUrl = Network().baseUrl() + '/consultation/img/${widget.id}';
+
     var response = await Network().getKonsultasiResult(widget.id);
     var body = json.decode(response.body);
     print(body);
@@ -149,6 +152,10 @@ class _ResultKonsultasiState extends State<ResultKonsultasi> {
                   ),
                 ),
               ],
+            ),
+            Container(
+              margin: const EdgeInsets.only(top: 10, bottom: 10),
+              child: Image.network(imgUrl, fit: BoxFit.cover),
             ),
           ],
         ),
