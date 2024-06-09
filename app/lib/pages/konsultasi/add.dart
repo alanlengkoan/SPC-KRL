@@ -45,7 +45,7 @@ class _AddKonsultasiState extends State<AddKonsultasi> {
 
   // untuk upload atau ambil gambar
   void _uploadOrTakeImage(ImageSource imageSource) async {
-    var imageUpload = await picker.pickImage(source: imageSource);
+    var imageUpload = await picker.pickImage(source: imageSource, imageQuality: 15);
 
     setState(() {
       _imageUpload = File(imageUpload!.path);

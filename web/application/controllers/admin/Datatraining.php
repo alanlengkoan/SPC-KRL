@@ -81,9 +81,7 @@ class Datatraining extends MY_Controller
             if (isset($post['ubah_gambar']) && $post['ubah_gambar'] === 'on') {
                 $get = $this->crud->gda('tb_datatraining', ['id_datatraining' => $post['id_datatraining']]);
 
-                del_picture($get['image']);
-
-                $image = add_picture('image');
+                $image = upd_picture('image', $get['image']);
 
                 if ($image['status']) {
                     $image_loc = upload_path('gambar') . $image['data']['file_name'];

@@ -539,14 +539,67 @@ if (!function_exists('checking_data')) {
     }
 }
 
+if (!function_exists('compressImage')) {
+    function compressImage($source, $destination, $quality)
+    {
+        // Get image info 
+        $imgInfo = getimagesize($source);
+        $mime = $imgInfo['mime'];
+
+        // Create a new image from file 
+        switch ($mime) {
+            case 'image/jpeg':
+                $image = imagecreatefromjpeg($source);
+                break;
+            case 'image/png':
+                $image = imagecreatefrompng($source);
+                break;
+            case 'image/gif':
+                $image = imagecreatefromgif($source);
+                break;
+            default:
+                $image = imagecreatefromjpeg($source);
+        }
+
+        // Save image 
+        imagejpeg($image, $destination, $quality);
+
+        // Return compressed image 
+        return $destination;
+    }
+}
+
+if (!function_exists('resizeImage')) {
+    function resizeImage($file_name)
+    {
+        $source          = './' . upload_path('ori_gambar') . $file_name;
+        $destination     = './' . upload_path('gambar') . $file_name;
+        $compressedImage = compressImage($source, $destination, 15);
+
+        if ($compressedImage) {
+            if ($file_name !== null) {
+                if (file_exists($source)) {
+                    unlink($source);
+                }
+            }
+            
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
 if (!function_exists('add_picture')) {
     function add_picture($request_img)
     {
         $CI = get_instance();
-        $config['upload_path']   = './' . upload_path('gambar');
-        $config['allowed_types'] = 'jpg|jpeg|png';
-        $config['encrypt_name']  = TRUE;
-        $config['overwrite']     = TRUE;
+        $config = [
+            'upload_path'   => './' . upload_path('ori_gambar'),
+            'allowed_types' => 'jpg|jpeg|png',
+            'encrypt_name'  => TRUE,
+            'overwrite'     => TRUE,
+        ];
 
         $CI->load->library('upload', $config);
 
@@ -560,11 +613,23 @@ if (!function_exists('add_picture')) {
             ];
         } else {
             // apa bila berhasil
-            $result = [
-                'status'  => true,
-                'message' => 'Berhasil Upload!',
-                'data'    => $CI->upload->data(),
-            ];
+            $uploadData = $CI->upload->data();
+            $uploadFile = $uploadData['file_name'];
+
+            $resizeImage = resizeImage($uploadFile);
+
+            if ($resizeImage) {
+                $result = [
+                    'status'  => true,
+                    'message' => 'Berhasil Upload!',
+                    'data'    => $CI->upload->data(),
+                ];
+            } else {
+                $result = [
+                    'status'  => false,
+                    'message' => 'Gagal Upload!',
+                ];
+            }
         }
         return $result;
     }
