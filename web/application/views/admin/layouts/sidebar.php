@@ -51,17 +51,17 @@
                 </a>
             </li>
         </ul>
-        <div class="pcoded-navigation-label">Metode</div>
+        <!-- <div class="pcoded-navigation-label">Metode</div>
         <ul class="pcoded-item pcoded-left-item">
-            <li class="<?= ($this->uri->segment(2) === 'consultation' ? 'active' : '') ?>">
-                <a href="<?= admin_url() ?>consultation">
+            <li class="< ?= ($this->uri->segment(2) === 'consultation' ? 'active' : '') ?>">
+                <a href="< ?= admin_url() ?>consultation">
                     <span class="pcoded-micon">
                         <i class="fa fa-circle"></i>
                     </span>
                     <span class="pcoded-mtext">Consultation</span>
                 </a>
             </li>
-        </ul>
+        </ul> -->
         <div class="pcoded-navigation-label">Laporan</div>
         <ul class="pcoded-item pcoded-left-item">
             <li class="<?= ($this->uri->segment(3) === 'consultation' ? 'active' : '') ?>">

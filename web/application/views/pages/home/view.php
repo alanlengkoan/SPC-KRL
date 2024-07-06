@@ -84,7 +84,7 @@
                 <div class="page-title text-center">
                     <h5 class="title">Features</h5>
                     <div class="space-10"></div>
-                    <h3>Pwoerful Features As Always</h3>
+                    <h3>Powerful Features As Always</h3>
                     <div class="space-60"></div>
                 </div>
             </div>
@@ -96,7 +96,6 @@
                         <i class="lnr lnr-rocket"></i>
                     </div>
                     <h4>Fast &amp; Powerful</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                 </div>
                 <div class="space-60"></div>
                 <div class="service-box wow fadeInUp" data-wow-delay="0.4s">
@@ -104,7 +103,6 @@
                         <i class="lnr lnr-paperclip"></i>
                     </div>
                     <h4>Easily Editable</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                 </div>
                 <div class="space-60"></div>
                 <div class="service-box wow fadeInUp" data-wow-delay="0.6s">
@@ -112,7 +110,6 @@
                         <i class="lnr lnr-cloud-download"></i>
                     </div>
                     <h4>Cloud Storage</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                 </div>
                 <div class="space-60"></div>
             </div>
@@ -127,7 +124,6 @@
                         <i class="lnr lnr-clock"></i>
                     </div>
                     <h4>Easy Notifications</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                 </div>
                 <div class="space-60"></div>
                 <div class="service-box wow fadeInUp" data-wow-delay="0.4s">
@@ -135,7 +131,6 @@
                         <i class="lnr lnr-laptop-phone"></i>
                     </div>
                     <h4>Fully Responsive</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                 </div>
                 <div class="space-60"></div>
                 <div class="service-box wow fadeInUp" data-wow-delay="0.6s">
@@ -143,7 +138,6 @@
                         <i class="lnr lnr-cog"></i>
                     </div>
                     <h4>Editable Layout</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                 </div>
                 <div class="space-60"></div>
             </div>
