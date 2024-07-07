@@ -80,11 +80,7 @@
                 </div>
                 <div class="col-xs-12 col-md-7">
                     <div class="space-80 hidden-xs"></div>
-                    <h1 class="wow fadeInUp" data-wow-delay="0.4s">Selamat Datang di Aplikasi Seaweed Delivery App (SDA)</h1>
-                    <div class="space-20"></div>
-                    <div class="desc wow fadeInUp" data-wow-delay="0.6s">
-                        <p>Seaweed Delivery App (SDA) merupakan sebuah sistem yang digunakan untuk mengetahui rumput laut yang berkualitas dan kelayakan untuk di konsumsi karena kita tahu bahwa rumput laut memiliki protein yang sangat tinggi, agar masyarakat dan peternak rumput laut dapat memperjual belikan dan membedakan rumput laut yang memiliki kualitas bagus dan tidak bagus.</p>
-                    </div>
+                    <h1 class="wow fadeInUp" data-wow-delay="0.4s">Selamat Datang di Aplikasi Seaweed Detected App (SDA)</h1>
                     <div class="space-20"></div>
                     <a href="<?= assets_url() ?>download/sda.apk" class="bttn-white wow fadeInUp" data-wow-delay="0.8s"><i class="lnr lnr-download"></i>Download App</a>
                 </div>

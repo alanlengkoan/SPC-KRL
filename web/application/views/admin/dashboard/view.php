@@ -29,10 +29,7 @@
             <div class="page-body">
                 <div class="card">
                     <div class="card-header">
-                        <h3>Selamat Datang</h3>
-                    </div>
-                    <div class="card-block table-border-style">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae, nam architecto quibusdam laudantium itaque quia vitae accusamus neque modi quas inventore, obcaecati temporibus a sequi dolore nihil ab eos? Asperiores.
+                        <h3>Selamat Datang, Admin</h3>
                     </div>
                 </div>
             </div>
