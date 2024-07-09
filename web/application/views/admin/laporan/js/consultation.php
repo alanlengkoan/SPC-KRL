@@ -56,7 +56,6 @@
                         return `
                             <div class="button-icon-btn button-icon-btn-cl">
                                 <a href="<?= admin_url() ?>consultation/results/` + full.id_consultation + `" target="_blank" class="btn btn-info btn-sm waves-effect"><i class="fa fa-info-circle"></i>&nbsp;Detail</a>&nbsp;
-                                <button type="button" id="btn-del" data-id="` + full.id_consultation + `" class="btn btn-warning btn-sm waves-effect"><i class="fa fa-trash"></i>&nbsp;Hapus</button>
                             </div>
                         `;
                     },
