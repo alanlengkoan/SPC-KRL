@@ -59,18 +59,29 @@ class Consultation extends MY_Controller
         $get_basis           = $this->m_datatraining->get_all();
 
         $this->imagesampler->image($image_loc);
+        $this->imagesampler->set_steps(1);
+        $this->imagesampler->init();
+
+        // untuk menghitung GLCM
         $glcm        = $this->imagesampler->calculateGLCM();
         $contrast    = $this->imagesampler->calculateContrast($glcm);
         $correlation = $this->imagesampler->calculateCorrelation($glcm);
         $energy      = $this->imagesampler->calculateEnergy($glcm);
         $homogeneity = $this->imagesampler->calculateHomogeneity($glcm);
 
+        // untuk rgb
+        $rgb       = $this->imagesampler->getRGB();
+        $objek     = $rgb[0][0];
+
         $data_test = [
             'image'       => $get_consultation['image'],
             'contrast'    => $contrast,
             'correlation' => $correlation,
             'energy'      => $energy,
-            'homogeneity' => $homogeneity
+            'homogeneity' => $homogeneity,
+            'r'           => $objek[0],
+            'g'           => $objek[1],
+            'b'           => $objek[2],
         ];
 
         $data_training = [];
@@ -122,7 +133,7 @@ class Consultation extends MY_Controller
         $result = [];
 
         foreach ($data_training as $key => $value) {
-            $count = round(sqrt(pow($data_test['contrast'] - $value->contrast, 2) + pow($data_test['correlation'] - $value->correlation, 2) + pow($data_test['energy'] - $value->energy, 2) + pow($data_test['homogeneity'] - $value->homogeneity, 2)), 2);
+            $count = round(sqrt(pow($data_test['contrast'] - $value->contrast, 2) + pow($data_test['correlation'] - $value->correlation, 2) + pow($data_test['energy'] - $value->energy, 2) + pow($data_test['homogeneity'] - $value->homogeneity, 2) + pow($data_test['r'] - $value->r, 2) + pow($data_test['g'] - $value->g, 2) + pow($data_test['b'] - $value->b, 2)), 2);
 
             $result[$value->id_datatraining] = $count;
         }
@@ -199,7 +210,7 @@ class Consultation extends MY_Controller
             $result[$key] = [
                 'euclidian' => $value,
                 'validitas' => $data_validitas[$key],
-                'weight' => $count
+                'weight'    => $count
             ];
         }
 

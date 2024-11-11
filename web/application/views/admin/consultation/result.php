@@ -44,6 +44,9 @@
                                     <th>Correlation</th>
                                     <th>Energy</th>
                                     <th>Homogeneity</th>
+                                    <th>R</th>
+                                    <th>G</th>
+                                    <th>B</th>
                                     <th>Label</th>
                                     <th>Euclidian Distance</th>
                                 </tr>
@@ -58,6 +61,9 @@
                                         <td><?= $data_training[$k_a]->correlation ?></td>
                                         <td><?= $data_training[$k_a]->energy ?></td>
                                         <td><?= $data_training[$k_a]->homogeneity ?></td>
+                                        <td><?= $data_training[$k_a]->r ?></td>
+                                        <td><?= $data_training[$k_a]->g ?></td>
+                                        <td><?= $data_training[$k_a]->b ?></td>
                                         <td><?= $data_training[$k_a]->nama ?></td>
                                         <td><?= $v_a ?></td>
                                     </tr>
@@ -82,6 +88,9 @@
                                     <th>Correlation</th>
                                     <th>Energy</th>
                                     <th>Homogeneity</th>
+                                    <th>R</th>
+                                    <th>G</th>
+                                    <th>B</th>
                                     <th>Label</th>
                                     <th>Euclidian Distance</th>
                                 </tr>
@@ -96,6 +105,9 @@
                                         <td><?= $data_training[$k_b]->correlation ?></td>
                                         <td><?= $data_training[$k_b]->energy ?></td>
                                         <td><?= $data_training[$k_b]->homogeneity ?></td>
+                                        <td><?= $data_training[$k_b]->r ?></td>
+                                        <td><?= $data_training[$k_b]->g ?></td>
+                                        <td><?= $data_training[$k_b]->b ?></td>
                                         <td><?= $data_training[$k_b]->nama ?></td>
                                         <td><?= $v_b ?></td>
                                     </tr>
@@ -160,6 +172,9 @@
                                     <th>Correlation</th>
                                     <th>Energy</th>
                                     <th>Homogeneity</th>
+                                    <th>R</th>
+                                    <th>G</th>
+                                    <th>B</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -168,6 +183,9 @@
                                     <td><?= $data_test['correlation'] ?></td>
                                     <td><?= $data_test['energy'] ?></td>
                                     <td><?= $data_test['homogeneity'] ?></td>
+                                    <td><?= $data_test['r'] ?></td>
+                                    <td><?= $data_test['g'] ?></td>
+                                    <td><?= $data_test['b'] ?></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -247,6 +265,9 @@
                                         <th>Correlation</th>
                                         <th>Energy</th>
                                         <th>Homogeneity</th>
+                                        <th>R</th>
+                                        <th>G</th>
+                                        <th>B</th>
                                         <th>Klasifikasi</th>
                                         <th>Validitas</th>
                                     </tr>
@@ -261,6 +282,9 @@
                                             <td><?= $data_training[$k_e]->correlation ?></td>
                                             <td><?= $data_training[$k_e]->energy ?></td>
                                             <td><?= $data_training[$k_e]->homogeneity ?></td>
+                                            <td><?= $data_training[$k_e]->r ?></td>
+                                            <td><?= $data_training[$k_e]->g ?></td>
+                                            <td><?= $data_training[$k_e]->b ?></td>
                                             <td><?= $data_training[$k_e]->nama ?></td>
                                             <td><?= $v_e ?></td>
                                         </tr>
@@ -278,6 +302,9 @@
                                         <th>Correlation</th>
                                         <th>Energy</th>
                                         <th>Homogeneity</th>
+                                        <th>R</th>
+                                        <th>G</th>
+                                        <th>B</th>
                                         <th>Klasifikasi</th>
                                         <th>Weight Voting</th>
                                     </tr>
@@ -292,6 +319,9 @@
                                             <td><?= $data_training[$k_f]->correlation ?></td>
                                             <td><?= $data_training[$k_f]->energy ?></td>
                                             <td><?= $data_training[$k_f]->homogeneity ?></td>
+                                            <td><?= $data_training[$k_f]->r ?></td>
+                                            <td><?= $data_training[$k_f]->g ?></td>
+                                            <td><?= $data_training[$k_f]->b ?></td>
                                             <td><?= $data_training[$k_f]->nama ?></td>
                                             <td><?= $v_f['weight'] ?></td>
                                         </tr>
@@ -309,6 +339,9 @@
                                         <th>Correlation</th>
                                         <th>Energy</th>
                                         <th>Homogeneity</th>
+                                        <th>R</th>
+                                        <th>G</th>
+                                        <th>B</th>
                                         <th>Klasifikasi</th>
                                         <th>Euclidian Distance</th>
                                         <th>Validitas</th>
@@ -325,6 +358,9 @@
                                             <td><?= $data_training[$k_f]->correlation ?></td>
                                             <td><?= $data_training[$k_f]->energy ?></td>
                                             <td><?= $data_training[$k_f]->homogeneity ?></td>
+                                            <td><?= $data_training[$k_f]->r ?></td>
+                                            <td><?= $data_training[$k_f]->g ?></td>
+                                            <td><?= $data_training[$k_f]->b ?></td>
                                             <td><?= $data_training[$k_f]->nama ?></td>
                                             <td><?= $v_f['euclidian'] ?></td>
                                             <td><?= $v_f['validitas'] ?></td>

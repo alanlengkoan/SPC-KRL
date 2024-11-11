@@ -50,11 +50,19 @@ class Datatraining extends MY_Controller
                 $image_loc = upload_path('gambar') . $image['data']['file_name'];
 
                 $this->imagesampler->image($image_loc);
+                $this->imagesampler->set_steps(1);
+                $this->imagesampler->init();
+
+                // untuk menghitung GLCM
                 $glcm        = $this->imagesampler->calculateGLCM();
                 $contrast    = $this->imagesampler->calculateContrast($glcm);
                 $correlation = $this->imagesampler->calculateCorrelation($glcm);
                 $energy      = $this->imagesampler->calculateEnergy($glcm);
                 $homogeneity = $this->imagesampler->calculateHomogeneity($glcm);
+
+                // untuk rgb
+                $rgb       = $this->imagesampler->getRGB();
+                $objek     = $rgb[0][0];
 
                 $data = [
                     'id_classification' => $post['id_classification'],
@@ -62,7 +70,10 @@ class Datatraining extends MY_Controller
                     'contrast'          => $contrast,
                     'correlation'       => $correlation,
                     'energy'            => $energy,
-                    'homogeneity'       => $homogeneity
+                    'homogeneity'       => $homogeneity,
+                    'r'                 => $objek[0],
+                    'g'                 => $objek[1],
+                    'b'                 => $objek[2],
                 ];
 
                 $this->db->trans_start();
@@ -87,12 +98,19 @@ class Datatraining extends MY_Controller
                     $image_loc = upload_path('gambar') . $image['data']['file_name'];
 
                     $this->imagesampler->image($image_loc);
+                    $this->imagesampler->set_steps(1);
+                    $this->imagesampler->init();
+
+                    // untuk menghitung GLCM
                     $glcm        = $this->imagesampler->calculateGLCM();
                     $contrast    = $this->imagesampler->calculateContrast($glcm);
                     $correlation = $this->imagesampler->calculateCorrelation($glcm);
                     $energy      = $this->imagesampler->calculateEnergy($glcm);
                     $homogeneity = $this->imagesampler->calculateHomogeneity($glcm);
 
+                    // untuk rgb
+                    $rgb       = $this->imagesampler->getRGB();
+                    $objek     = $rgb[0][0];
 
                     $data = [
                         'id_classification' => $post['id_classification'],
@@ -100,7 +118,10 @@ class Datatraining extends MY_Controller
                         'contrast'          => $contrast,
                         'correlation'       => $correlation,
                         'energy'            => $energy,
-                        'homogeneity'       => $homogeneity
+                        'homogeneity'       => $homogeneity,
+                        'r'                 => $objek[0],
+                        'g'                 => $objek[1],
+                        'b'                 => $objek[2],
                     ];
 
                     $this->db->trans_start();

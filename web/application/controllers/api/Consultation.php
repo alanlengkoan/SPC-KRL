@@ -67,18 +67,29 @@ class Consultation extends MY_Controller
         $get_basis           = $this->m_datatraining->get_all()->result();
 
         $this->imagesampler->image($image_loc);
+        $this->imagesampler->set_steps(1);
+        $this->imagesampler->init();
+
+        // untuk menghitung GLCM
         $glcm        = $this->imagesampler->calculateGLCM();
         $contrast    = $this->imagesampler->calculateContrast($glcm);
         $correlation = $this->imagesampler->calculateCorrelation($glcm);
         $energy      = $this->imagesampler->calculateEnergy($glcm);
         $homogeneity = $this->imagesampler->calculateHomogeneity($glcm);
 
+        // untuk rgb
+        $rgb       = $this->imagesampler->getRGB();
+        $objek     = $rgb[0][0];
+
         $data_test = [
             'image'       => $get_consultation['image'],
             'contrast'    => $contrast,
             'correlation' => $correlation,
             'energy'      => $energy,
-            'homogeneity' => $homogeneity
+            'homogeneity' => $homogeneity,
+            'r'           => $objek[0],
+            'g'           => $objek[1],
+            'b'           => $objek[2],
         ];
 
         $data_training = [];
@@ -113,7 +124,10 @@ class Consultation extends MY_Controller
             'contrast'       => $contrast,
             'correlation'    => $correlation,
             'energy'         => $energy,
-            'homogeneity'    => $homogeneity
+            'homogeneity'    => $homogeneity,
+            'r'              => $objek[0],
+            'g'              => $objek[1],
+            'b'              => $objek[2],
         ];
 
         $this->_response($consultation);

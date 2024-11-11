@@ -57,6 +57,21 @@
                     className: 'text-center',
                 },
                 {
+                    title: 'R',
+                    data: 'r',
+                    className: 'text-center',
+                },
+                {
+                    title: 'G',
+                    data: 'g',
+                    className: 'text-center',
+                },
+                {
+                    title: 'B',
+                    data: 'b',
+                    className: 'text-center',
+                },
+                {
                     title: 'Image',
                     className: 'text-center',
                     render: function(data, type, full, meta) {
